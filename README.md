@@ -1,2 +1,11 @@
 # Projeto-Web-Servidor
-Projeto da disciplina de Desenvolvimento Web Servidor.
+
+Projeto realizado para disciplina de Desenvolvimento Web Servidor
+
+## Projeto:
+**???**
+> ????
+
+### Contribuidores
+> Eduardo Schiliga
+> Marcos Artêmio Gomes dos Santos
