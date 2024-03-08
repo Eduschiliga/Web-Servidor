@@ -7,6 +7,6 @@ Projeto realizado para disciplina de Desenvolvimento Web Servidor
 > ????
 
 ### Contribuidores
-> Eduardo Schiliga  
-> Marcos Artêmio Gomes dos Santos
-> Fernanda Pachla de lima
+- **Eduardo Schiliga**
+- **Marcos Artêmio Gomes dos Santos**
+- **Fernanda Pachla de lima**
