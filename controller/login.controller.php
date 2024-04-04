@@ -1,17 +1,16 @@
 <?php
 
-    require_once 'model/Usuario.php';
+    //require 'model/Usuario.php';
 
-    function acessar($oab,$senha){
+    function acessar(){
+        $oab = $_POST['oab'];
+        $senha = $_POST['password'];
         if($oab == "12345" && $senha == "admin"){
             echo("Acesso liberado!");
         }else{
             echo("Acesso negado!");
         }
     }
-
-    $oab = $_POST['oab'];
-    $senha = $_POST['password'];
 
     //$usuario = new Usuario();
 
