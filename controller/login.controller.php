@@ -1,6 +1,7 @@
 <?php
 
-    //require_once 'model/Usuario.php';
+    require_once 'model/Usuario.php';
+
     function acessar($oab,$senha){
         if($oab == "12345" && $senha == "admin"){
             echo("Acesso liberado!");
@@ -12,5 +13,7 @@
     $oab = $_POST['oab'];
     $senha = $_POST['password'];
 
-    acessar($oab,$senha);
+    //$usuario = new Usuario();
+
+    require 'views/login.view.php';
 ?>

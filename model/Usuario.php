@@ -1,8 +1,9 @@
 <?php
 
     class Usuario{
-        private $nome;
-        private $oab;
+        private static $nome;
+        private static $oab;
+        private static $senha;
 
         public function getNome(){
             return $this->nome;
@@ -20,6 +21,10 @@
             $this->oab = $oab;
         }
 
+        public function setSenha($senha){
+            $this->senha = $senha;
+        }
+        
         public function criarUsuario(){
             //A fazer
         }
