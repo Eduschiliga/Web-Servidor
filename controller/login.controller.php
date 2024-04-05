@@ -1,22 +1,28 @@
 <?php
 
-    require 'model/Usuario.php';
+    $oab = $_POST['oab'] ?? '';
+    $senha = $_POST['password'] ?? '';
+    $erro = false;
 
-    function acessar(){
-        $oab = $_POST['oab'];
-        $senha = $_POST['password'];
+    session_start();
 
-        if($oab == "12345" && $senha == "admin"){
-            $usuario = new Usuario($oab,$senha);
-            header("Location: controller/principal.controller.php");
-        }else{
-            echo("Acesso negado!");
-        }
+    if($oab == '123' && $senha == 'admin') {
+        $_SESSION['logado'] = true;
+        $_SESSION['oab'] = $oab;
+
+
+        header ("Location: principal.controller.php");
+    } else if (!empty($_POST)) {
+        $erro = true;
     }
 
-    if(isset($_POST['entrar'])){
-        acessar();
-    }
+//    if(!empty('logado') && $_SESSION['logado']) {
+//        header ("Location: principal.controller.php");
+//    }
 
+    if($erro) {
+        echo "<div><span>Número de OAB ou Senha inválidos! Tente novamente.</span></div>";
+    }
     require 'views/login.view.php';
-?>
+
+

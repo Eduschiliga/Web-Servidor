@@ -11,7 +11,7 @@
     <body>
         <main>
             <h1>Realize o seu Login</h1>
-            <form action="" method="post">
+            <form action="../controller/login.controller.php" method="post">
                 <label for="oab">número OAB</label>
                 <input type="text" name="oab" id="oab" required placeholder="Informe seu número OAB">
                 <label for="password">Senha</label>

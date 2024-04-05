@@ -1,13 +1,7 @@
 <header>
     <section>
         <span>Nome do Usuário</span>
-        <?php
-            require '../model/Usuario.php';
-
-            $oab = Usuario::getOab();
-            echo($oab);
-            echo("<span>OAB: {$oab}</span>");
-        ?>
+        <span>OAB: <?= $_SESSION['oab'] ?></span>
     </section>
 
     <section>
