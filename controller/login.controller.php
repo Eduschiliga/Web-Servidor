@@ -1,6 +1,6 @@
 <?php
 
-    require '../model/Usuario.php';
+    require 'model/Usuario.php';
 
     function acessar(){
         $oab = $_POST['oab'];

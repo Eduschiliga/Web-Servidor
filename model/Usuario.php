@@ -19,7 +19,7 @@
         }
 
         public static function getOab(){
-            return Usuario::$oab;
+            return self::$oab;
         }
 
         public function setOab($oab){
