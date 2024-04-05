@@ -11,7 +11,7 @@
     <body>
         <main>
             <h1>Realize o seu Login</h1>
-            <form action="/controller/login.controller.php" method="post">
+            <form action="" method="post">
                 <label for="oab">número OAB</label>
                 <input type="text" name="oab" id="oab" required placeholder="Informe seu número OAB">
                 <label for="password">Senha</label>
@@ -19,11 +19,5 @@
                 <button type="submit" name="entrar">Entrar</button>
             </form>
         </main>
-
-        <?php
-            if(isset($_POST['entrar'])){
-                acessar();
-            }
-        ?>
     </body>
 </html>

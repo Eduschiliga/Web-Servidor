@@ -1,7 +1,4 @@
 <?php
-
-    //require 'model/Usuario.php';
-
     function acessar(){
         $oab = $_POST['oab'];
         $senha = $_POST['password'];
@@ -12,7 +9,9 @@
         }
     }
 
-    //$usuario = new Usuario();
+    if(isset($_POST['entrar'])){
+        acessar();
+    }
 
     require 'views/login.view.php';
 ?>
