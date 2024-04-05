@@ -5,6 +5,7 @@
             require '../model/Usuario.php';
 
             $oab = Usuario::getOab();
+            echo($oab);
             echo("<span>OAB: {$oab}</span>");
         ?>
     </section>
