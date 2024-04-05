@@ -5,6 +5,11 @@
         private static $oab;
         private static $senha;
 
+        public function __construct($oab,$senha){
+            $this->oab = $oab;
+            $this->senha = $senha;
+        }
+        
         public function getNome(){
             return $this->nome;
         }

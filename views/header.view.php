@@ -1,7 +1,13 @@
+<?php
+    require '../mode/Usuario.php';
+
+    $oab = Usuario::getOab();
+?>
+
 <header>
     <section>
-        <span>Nome de user</span>
-        <span>OAB: 111.111</span>
+        <span>Nome do Usuário</span>
+        <span>OAB: <?=$oab?></span>
     </section>
 
     <section>
