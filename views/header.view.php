@@ -1,13 +1,12 @@
-<?php
-    require '../model/Usuario.php';
-
-    $oab = Usuario::getOab();
-?>
-
 <header>
     <section>
         <span>Nome do Usuário</span>
-        <span>OAB: <?=$oab?></span>
+        <?php
+            require '../model/Usuario.php';
+
+            $oab = Usuario::getOab();
+            echo("<span>OAB: {$oab}</span>");
+        ?>
     </section>
 
     <section>
