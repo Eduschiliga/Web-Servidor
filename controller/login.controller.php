@@ -2,8 +2,9 @@
     function acessar(){
         $oab = $_POST['oab'];
         $senha = $_POST['password'];
+
         if($oab == "12345" && $senha == "admin"){
-            echo("Acesso liberado!");
+            header("Location: controller/principal.controller.php");
         }else{
             echo("Acesso negado!");
         }

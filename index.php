@@ -8,6 +8,8 @@
         <title>Página Inicial</title>
     </head>
     <body>
-        <?php require("controller/login.controller.php") ?>
+        <?php require("controller/login.controller.php"); ?>
+
+
     </body>
 </html>
