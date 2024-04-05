@@ -18,8 +18,8 @@
             $this->nome = $nome;
         }
 
-        public function getOab(){
-            return $this->oab;
+        public static function getOab(){
+            return Usuario::$oab;
         }
 
         public function setOab($oab){

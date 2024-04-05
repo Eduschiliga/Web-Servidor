@@ -1,5 +1,5 @@
 <?php
-    require '../mode/Usuario.php';
+    require '../model/Usuario.php';
 
     $oab = Usuario::getOab();
 ?>
