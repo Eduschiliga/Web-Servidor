@@ -8,7 +8,7 @@
 
         if($oab == "12345" && $senha == "admin"){
             $usuario = new Usuario($oab,$senha);
-            echo("{$usuario} | {$senha}");
+            echo("{$usuario::getOab()} | {$usuario::getSenha()}");
             header("Location: controller/principal.controller.php");
         }else{
             echo("Acesso negado!");
