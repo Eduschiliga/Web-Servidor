@@ -1,33 +1,33 @@
 <?php
 
     class Usuario{
-        private static $nome;
-        private static $oab;
-        private static $senha;
+        private $nome;
+        private $oab;
+        private $senha;
 
-        public function __construct($t,$a){
-            $oab = $t;
-            $senha = $a;
+        public function __construct($oab,$senha){
+            $this->oab = $oab;
+            $this->senha = $senha;
         }
         
         public function getNome(){
-            return self::nome;
+            return $this->nome;
         }
 
-        public function setNome($nom){
-            $nome = $nom;
+        public function setNome($nome){
+            $this->nome = $nome;
         }
 
-        public static function getOab(){
-            return self::$oab;
+        public function getOab(){
+            return $this->oab;
         }
 
-        public function setOab($oa){
-            $oab = $oa;
+        public function setOab($oab){
+            $this->oab = $oab;
         }
 
-        public function setSenha($sena){
-            $senha = $sena;
+        public function setSenha($senha){
+            $this->senha = $senha;
         }
         
         public function criarUsuario(){

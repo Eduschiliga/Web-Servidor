@@ -1,24 +1,24 @@
 <?php
 
-    $oab = $_POST['oab'] ?? '';
-    $senha = $_POST['password'] ?? '';
-    $erro = false;
-
     session_start();
 
-    if($oab == '123' && $senha == 'admin') {
-        $_SESSION['logado'] = true;
-        $_SESSION['oab'] = $oab;
+    function login($oab,$senha){
+        if($oab == '123' && $senha == 'admin') { //Verificação de dados do usuário para permição de acesso ao sistema
+            $_SESSION['logado'] = true;
+            $_SESSION['oab'] = $oab;
 
-
-        header ("Location: principal.controller.php");
-    } else if (!empty($_POST)) {
-        $erro = true;
+            header ("Location: principal.controller.php");
+        } else if (!empty($_POST)) {
+            echo "<span>Número de OAB ou Senha inválidos! Tente novamente.</span>";
+        }
     }
 
-    if($erro) {
-        echo "<div><span>Número de OAB ou Senha inválidos! Tente novamente.</span></div>";
+    if(isset($_POST["entrar"])){
+        $oab = $_POST['oab'] ?? '';
+        $senha = $_POST['password'] ?? '';
+        login($oab,$senha);
     }
+
     require 'views/login.view.php';
 
-
+?>
