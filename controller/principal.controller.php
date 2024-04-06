@@ -2,7 +2,7 @@
 
     session_start();
 
-    if(empty($_SESSION['logado']) || !$_SESSION['logado']) {
+    if(empty($_SESSION['logado'])) {
         header('Location: ../index.php');
     } else {
         require ("../views/header.view.php");

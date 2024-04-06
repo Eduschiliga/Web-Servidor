@@ -2,6 +2,7 @@
     <section>
         <span>Nome do Usuário</span>
         <span>OAB: <?= $_SESSION['oab'] ?></span>
+        <a href="../controller/logout.controller.php">Logout</a>
     </section>
 
     <section>
@@ -12,5 +13,14 @@
             </label>
             <button type="submit"><img src="../images/icons/search_icon.png" alt="Ícone de busca"></button>
         </form>
+    </section>
+
+    <section>
+        <nav>
+            <ul>
+                <li><a href="/processos.controller.php">Processos</a></li>
+                <li><a href="#">Honorários</a></li>
+            </ul>
+        </nav>
     </section>
 </header>
