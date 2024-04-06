@@ -2,7 +2,8 @@
 
     session_start();
 
-    function login($oab,$senha){
+    function login($oab,$senha): void
+    {
         if($oab == '123' && $senha == 'admin') { //Verificação de dados do usuário para permição de acesso ao sistema
             $_SESSION['logado'] = true;
             $_SESSION['oab'] = $oab;
