@@ -18,8 +18,24 @@
     <section>
         <nav>
             <ul>
-                <li><a href="/processos.controller.php">Processos</a></li>
-                <li><a href="#">Honorários</a></li>
+                <li>
+                    <a href="Projeto-Web-Servidor\controller\processos.controller.php">Processos</a>
+                    <ul>
+                        <li><a href="#">INCLUIR</a></li>
+                        <li><a href="#">REMOVER</a></li>
+                        <li><a href="#">EDITAR</a></li>
+                        <li><a href="#">VISUALIZAR</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Honorários</a>
+                    <ul>
+                        <li><a href="#">INCLUIR</a></li>
+                        <li><a href="#">REMOVER</a></li>
+                        <li><a href="#">EDITAR</a></li>
+                        <li><a href="#">VISUALIZAR</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </section>
