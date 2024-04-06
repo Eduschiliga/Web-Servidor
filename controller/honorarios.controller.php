@@ -1,9 +1,7 @@
 <?php
 
-        session_start();
+session_start();
 
-        require ("../views/header.view.php");
-        echo("Analrario");
-        require ("../views/footer.view.php");
-
-?>
+require ("../views/header.view.php");
+require ("../views/honorarios.view.php");
+require ("../views/footer.view.php");

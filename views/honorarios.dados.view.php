@@ -1,29 +1,10 @@
-<?php
-
-?>
-
-<section>
+<main>
     <a href="#">Voltar</a>
-    <h1>Cadastrar / Editar</h1>
-    <form action="">
+    <h1>Cadastrar / Editar - Processo</h1>
+    <form>
         <label>
             Número do processo:
             <input type="text" name="nmr_processo" id="nmr_processo">
-        </label>
-
-        <label>
-            Nome Cliente:
-            <input type="text" name="nome_cliente" id="nome_cliente">
-        </label>
-
-        <label>
-            Descrição:
-            <input type="text" name="descricao" id="descricao">
-        </label>
-
-        <label>
-            Próximo prazo:
-            <input type="date" name="data_proximo_prazo" id="data_proximo_prazo">
         </label>
 
         <label>
@@ -50,4 +31,5 @@
 
         <input type="submit" value="Salvar">
     </form>
-</section>
+
+</main>
