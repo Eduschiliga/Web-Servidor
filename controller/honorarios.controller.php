@@ -1,7 +1,13 @@
 <?php
 
-session_start();
+    session_start();
 
-require ("../views/header.view.php");
-require ("../views/honorarios.view.php");
-require ("../views/footer.view.php");
+    if(!empty($_SESSION['logado'])) {
+        require ("../views/header.view.php");
+        require ("../views/honorarios.view.php");
+        require ("../views/footer.view.php");
+    } else {
+        header('Location: ../index.php');
+    }
+
+?>
