@@ -9,3 +9,5 @@
         echo "Tela do sistema";
         require ("../views/footer.view.php");
     }
+
+?>
