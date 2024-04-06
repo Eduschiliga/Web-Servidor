@@ -16,10 +16,6 @@
         $erro = true;
     }
 
-//    if(!empty('logado') && $_SESSION['logado']) {
-//        header ("Location: principal.controller.php");
-//    }
-
     if($erro) {
         echo "<div><span>Número de OAB ou Senha inválidos! Tente novamente.</span></div>";
     }
