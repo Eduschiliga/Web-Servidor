@@ -17,8 +17,12 @@
 
     <section>
         <nav>
-            <a href="../controller/processos.controller.php"> Processos</a>
-            <a href="../controller/honorarios.controller.php">Honorários</a>
+            <ul>
+                <a href="../controller/processos.controller.php"> Processos</a>
+            </ul>
+            <ul>
+                <a href="../controller/honorarios.controller.php">Honorários</a>
+            </ul>
         </nav>
     </section>
 </header>
