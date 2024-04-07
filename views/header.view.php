@@ -19,10 +19,10 @@
         <nav>
             <ul>
                 <li>
-                    <a href="../controller/processos.controller.php"> Processos</a>
+                    <a href="../views/pages/processos/index.php"> Processos</a>
                 </li>
                 <li>
-                    <a href="../controller/honorarios.controller.php">Honorários</a>
+                    <a href="/views/pages/honorarios/index.php">Honorários</a>
                 </li>
             </ul>
         </nav>
