@@ -4,7 +4,7 @@
     <section>
         <span>Nome do Usuário</span>
         <span>OAB: <?= $_SESSION['oab'] ?></span>
-        <a href="../controller/logout.controller.php">Logout</a>
+        <a href="../../../controller/logout.controller.php">Logout</a>
     </section>
 
     <section>

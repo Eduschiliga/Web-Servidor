@@ -5,7 +5,7 @@
         function login($oab,$senha): void{
             require('../model/Usuario.php');
             session_start();
-            $usuario = new Usuario($oab,$senha);
+            $usuario = new Usuario((int) $oab,$senha);
             if($usuario->buscarUsuario()) { //Verificação de dados do usuário para permição de acesso ao sistema
                 $_SESSION['logado'] = true;
                 $_SESSION['oab'] = $oab;
@@ -30,3 +30,4 @@
     $controller = new loginController();
     $controller->processarLogin();
     require 'views/login.view.php';
+?>

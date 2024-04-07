@@ -6,4 +6,10 @@
         header('Location: ../views/pages/processos/dados.php');
     } else {
         header('Location: ../index.php');
+<<<<<<< Updated upstream
     }
+=======
+    }
+
+?>
+>>>>>>> Stashed changes
