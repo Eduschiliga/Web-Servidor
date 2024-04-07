@@ -8,7 +8,8 @@
     <title>Honorários</title>
 </head>
 <body>
+    <?php require ("../../header.view.php"); ?>
     <h1>Honorários</h1>
-    <?php include("controller/honorarios.controller.php"); ?>
+    <?php require ("../../footer.view.php"); ?>
 </body>
 </html>

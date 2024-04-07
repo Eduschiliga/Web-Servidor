@@ -8,6 +8,7 @@
         <title>Login</title>
         <link rel="stylesheet" href="views/styles/global.style.css">
         <link rel="stylesheet" href="views/styles/login.style.css">
+        <link rel="stylesheet" href="views/styles/menu.style.css">
 
 
     </head>

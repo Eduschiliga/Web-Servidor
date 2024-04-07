@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php require ("../../header.view.php"); ?>
-    <h1>Processos</h1>
+    <?php require ("../../processos.dados.view.php"); ?>
     <?php require ("../../footer.view.php"); ?>
 </body>
 </html>

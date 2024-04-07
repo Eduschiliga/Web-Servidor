@@ -1,4 +1,6 @@
-<header>
+<?php session_start(); ?>
+
+<header class="menu">
     <section>
         <span>Nome do Usuário</span>
         <span>OAB: <?= $_SESSION['oab'] ?></span>
@@ -11,7 +13,7 @@
                 Buscar processo
                 <input type="text" name="termo_busca" placeholder="Informe o número do processo...">
             </label>
-            <button type="submit"><img src="../images/icons/search_icon.png" alt="Ícone de busca"></button>
+            <button type="submit"><img src="/images/icons/search_icon.png" alt="Ícone de busca"></button>
         </form>
     </section>
 
@@ -19,10 +21,10 @@
         <nav>
             <ul>
                 <li>
-                    <a href="../views/pages/processos/index.php"> Processos</a>
+                    <a href="../../../controller/processos.controller.php"> Processos</a>
                 </li>
                 <li>
-                    <a href="/views/pages/honorarios/index.php">Honorários</a>
+                    <a href="../../../controller/honorarios.controller.php">Honorários</a>
                 </li>
             </ul>
         </nav>

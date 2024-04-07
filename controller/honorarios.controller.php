@@ -1,13 +1,10 @@
 <?php
 
     session_start();
-
-    if(!empty($_SESSION['logado'])) {
-        require ("../views/header.view.php");
-        require ("../views/honorarios.view.php");
-        require ("../views/footer.view.php");
-    } else {
-        header('Location: ../index.php');
-    }
+if(!empty($_SESSION['logado'])) {
+    header('Location: ../views/pages/honorarios/index.php');
+} else {
+    header('Location: ../index.php');
+}
 
 ?>
