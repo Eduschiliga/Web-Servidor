@@ -29,6 +29,14 @@
         public function setSenha($senha){
             $this->senha = $senha;
         }
+
+        public function buscarUsuario():bool{
+            if($this->oab == '123' && $this->senha == 'admin'){
+                return true;
+            }else{
+                return false;
+            }
+        }
         
         public function criarUsuario(){
             //A fazer
