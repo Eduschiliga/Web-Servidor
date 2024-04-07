@@ -1,3 +1,37 @@
-header {
-    background-color: red;
+.menu {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+    align-items: center;
+}
+
+.menu > .container-info-user {
+    background-color: whitesmoke;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.menu > .container-info-user span {
+    padding: 5px;
+}
+
+.menu > .container-info-user a{
+    text-decoration: none;
+    height: 30px;
+    width: 100%;
+    color: white;
+    background-color: #007fff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.menu > .container-menu {
+
 }
