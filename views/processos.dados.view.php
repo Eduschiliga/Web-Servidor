@@ -1,9 +1,5 @@
-<?php
-
-?>
-
 <section>
-    <a href="#">Voltar</a>
+    <a href="../../../controller/processos.controller.php">Voltar</a>
     <h1>Cadastrar / Editar</h1>
     <form action="">
         <label>

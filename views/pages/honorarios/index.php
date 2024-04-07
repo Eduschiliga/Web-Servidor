@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php require ("../../header.view.php"); ?>
-    <h1>Honorários</h1>
+    <?php require ("../../honorarios.view.php"); ?>
     <?php require ("../../footer.view.php"); ?>
 </body>
 </html>

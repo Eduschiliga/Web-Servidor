@@ -5,11 +5,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Processos</title>
+    <title>Honorários</title>
 </head>
 <body>
     <?php require ("../../header.view.php"); ?>
-    <?php require ("../../processos.view.php"); ?>
+    <?php require ("../../honorarios.dados.view.php"); ?>
     <?php require ("../../footer.view.php"); ?>
 </body>
 </html>

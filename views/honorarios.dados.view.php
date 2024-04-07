@@ -1,6 +1,6 @@
 <main>
-    <a href="#">Voltar</a>
-    <h1>Cadastrar / Editar - Processo</h1>
+    <a href="../../../controller/honorarios.controller.php">Voltar</a>
+    <h1>Cadastrar / Editar - Honorário</h1>
     <form>
         <label>
             Número do processo:
