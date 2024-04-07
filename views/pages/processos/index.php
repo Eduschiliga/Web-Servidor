@@ -10,6 +10,7 @@
 <body>
     <?php require ("../../header.view.php"); ?>
     <h1>Processos</h1>
+    <?php require ("../../processos.view.php"); ?>
     <?php require ("../../footer.view.php"); ?>
 </body>
 </html>
