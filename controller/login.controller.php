@@ -21,5 +21,3 @@
     }
 
     require 'views/login.view.php';
-
-?>
