@@ -1,9 +1,9 @@
 <?php
-    require('model/Usuario.php');
 
     class loginController{
 
         function login($oab,$senha): void{
+            require('../model/Usuario.php');
             session_start();
             $usuario = new Usuario($oab,$senha);
             if($usuario->buscarUsuario()) { //Verificação de dados do usuário para permição de acesso ao sistema
@@ -30,7 +30,3 @@
     $controller = new loginController();
     $controller->processarLogin();
     require 'views/login.view.php';
-<<<<<<< Updated upstream
-=======
-?>
->>>>>>> Stashed changes

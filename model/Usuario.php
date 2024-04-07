@@ -1,32 +1,36 @@
 <?php
-
     class Usuario{
-        private $nome;
-        private $oab;
-        private $senha;
+        private string $nome;
+        private string $oab;
+        private string $senha;
 
         public function __construct($oab,$senha){
             $this->oab = $oab;
             $this->senha = $senha;
         }
         
-        public function getNome(){
+        public function getNome(): string
+        {
             return $this->nome;
         }
 
-        public function setNome($nome){
+        public function setNome($nome): void
+        {
             $this->nome = $nome;
         }
 
-        public function getOab(){
+        public function getOab(): string
+        {
             return $this->oab;
         }
 
-        public function setOab($oab){
+        public function setOab($oab): void
+        {
             $this->oab = $oab;
         }
 
-        public function setSenha($senha){
+        public function setSenha($senha): void
+        {
             $this->senha = $senha;
         }
 
@@ -54,4 +58,3 @@
             //A fazer
         }
     }
-?>
