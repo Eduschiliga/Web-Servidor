@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Página principal</title>
     <link rel="stylesheet" href="/views/styles/menu.style.css">
+    <link rel='stylesheet' href='/views/styles/global.style.css'>
 </head>
 <body>
         <?php require ("../../header.view.php"); ?>
