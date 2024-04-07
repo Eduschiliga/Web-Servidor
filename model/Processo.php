@@ -6,6 +6,7 @@
         private int $qtdHonorarios;
         private int $nmrParcelas;
         private bool $escritorio;
+        private string $descricao;
 
         public function __construct($nmrProcesso){
             $this->nmrProcesso = $nmrProcesso;
@@ -59,13 +60,22 @@
             $this->escritorio = $escritorio;
         }
 
+        public function setDescricao($descricao): void{
+            $this->descricao = $descricao;
+        }
+
+        public function getDescricao(): string{
+            return $this->descricao;
+        }
+
         public function buscarProcesso(): void{
             if($this->nmrProcesso == 123){
-                $this->cliente = 'José Pau Pequeno';
+                $this->cliente = "José Pau Pequeno";
                 $this->proximoPrazo = '20/05/2025';
                 $this->qrtHonorarios = 5;
                 $this->nmrParcelas = 6;
                 $this->escritorio = false;
+                $this->descricao = "Preguiça";
             }
         }
         

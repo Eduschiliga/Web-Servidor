@@ -4,27 +4,27 @@
     <form action="">
         <label>
             Número do processo:
-            <input type="text" name="nmr_processo" id="nmr_processo">
+            <input type="text" name="nmr_processo" id="nmr_processo" value=<?= $_SESSION['nmrProcesso']; ?>>
         </label>
 
         <label>
             Nome Cliente:
-            <input type="text" name="nome_cliente" id="nome_cliente">
+            <input type="text" name="nome_cliente" id="nome_cliente" value=<?= $_SESSION['cliente']; ?>>
         </label>
 
         <label>
             Descrição:
-            <input type="text" name="descricao" id="descricao">
+            <input type="text" name="descricao" id="descricao" value=<?= $_SESSION['descricao']; ?>>
         </label>
 
         <label>
             Próximo prazo:
-            <input type="date" name="data_proximo_prazo" id="data_proximo_prazo">
+            <input type="text" name="data_proximo_prazo" id="data_proximo_prazo" value=<?= $_SESSION['proximoPrazo']; ?>>
         </label>
 
         <label>
             Honorários:
-            <input type="number" id="qtd_honorarios" name="qtd_honorarios" min="0" step="0.01" placeholder="R$0.00">
+            <input type="number" id="qtd_honorarios" name="qtd_honorarios" min="0" step="0.01" placeholder="R$0.00" value=<?= $_SESSION['qtdHonorarios']; ?>>
         </label>
 
         <label>Selecione o número de parcelas:
@@ -46,4 +46,7 @@
 
         <input type="submit" value="Salvar">
     </form>
+
+    <button type="submit" name="atualizar">Atualizar</button>
+    <button type="submit" name="remover">Remover</button>
 </section>

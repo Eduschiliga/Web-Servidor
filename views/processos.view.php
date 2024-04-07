@@ -3,17 +3,14 @@
     <section>
         <ul>
             <li><a href="../../../controller/processos.dados.controller.php?acao=incluir">INCLUIR</a></li>
-            <li><a href="#">REMOVER</a></li>
-            <li><a href="../../../controller/processos.dados.controller.php?acao=editar">EDITAR</a></li>
-            <li><a href="../../../controller/processos.dados.controller.php?acao=visualizar">VISUALIZAR</a></li>
         </ul>
     </section>
 
     <section>
-        <form method="get" action="">
+        <form method="get" action="../../../controller/processos.dados.controller.php">
             <label>
                 Buscar processo
-                <input type="text" name="termo_busca" placeholder="Informe o número do processo...">
+                <input type="text" name="nmrProcesso" placeholder="Informe o número do processo...">
             </label>
             <button type="submit"><img src="/images/icons/search_icon.png" alt="Ícone de busca"></button>
         </form>
