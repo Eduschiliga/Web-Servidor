@@ -1,0 +1,58 @@
+section {
+    width: 500px;
+    margin: 32px auto;
+}
+
+section > h1 {
+    margin: 16px 0 12px 0;
+}
+
+form {
+    margin: 0 auto;
+    background-color: white;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.24);
+}
+
+form > label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+form > label input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid darkgrey;
+}
+
+#nmr_parcelas,
+#metade_escritorio {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    border: 1px solid darkgrey;
+}
+
+input[type="submit"] {
+    margin-top: 20px;
+}
+
+section a {
+
+}
+
+input[type="submit"],
+section > a {
+    background-color: #007fff;
+    padding: 10px 8px;
+    width: 150px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+}

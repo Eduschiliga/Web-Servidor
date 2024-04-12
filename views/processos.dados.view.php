@@ -1,25 +1,25 @@
 <section>
-    <a href="../../../controller/processos.controller.php">Voltar</a>
+    <a href="../../../controller/processos.controller.php" id="btn_voltar">Voltar</a>
     <h1>Cadastrar / Editar</h1>
     <form action="">
         <label>
             Número do processo:
-            <input type="text" name="nmr_processo" id="nmr_processo" value=<?= $_SESSION['nmrProcesso']; ?>>
+            <input placeholder="Informe o número do processo" type="text" name="nmr_processo" id="nmr_processo" value=<?= $_SESSION['nmrProcesso'];?>>
         </label>
 
         <label>
             Nome Cliente:
-            <input type="text" name="nome_cliente" id="nome_cliente" value=<?= $_SESSION['cliente']; ?>>
+            <input placeholder="Informe o nome do cliente" type="text" name="nome_cliente" id="nome_cliente" value=<?= $_SESSION['cliente']; ?> >
         </label>
 
         <label>
             Descrição:
-            <input type="text" name="descricao" id="descricao" value=<?= $_SESSION['descricao']; ?>>
+            <input placeholder="Informe a descrição" type="text" name="descricao" id="descricao" value=<?= $_SESSION['descricao']; ?> >
         </label>
 
         <label>
             Próximo prazo:
-            <input type="text" name="data_proximo_prazo" id="data_proximo_prazo" value=<?= $_SESSION['proximoPrazo']; ?>>
+            <input type="date" name="data_proximo_prazo" id="data_proximo_prazo" value=<?= $_SESSION['proximoPrazo']; ?>>
         </label>
 
         <label>
@@ -40,13 +40,12 @@
 
         <label>
             Metade para o escritório:
-            <input type="radio" name="metade_escritorio" value="sim">Sim
-            <input type="radio" name="metade_escritorio" value="nao">Não
+            <select id="metade_escritorio" name="metade_escritorio">
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
         </label>
 
-        <input type="submit" value="Salvar">
+        <input type="submit" value="Salvar" id="input_submit">
     </form>
-
-    <button type="submit" name="atualizar">Atualizar</button>
-    <button type="submit" name="remover">Remover</button>
 </section>

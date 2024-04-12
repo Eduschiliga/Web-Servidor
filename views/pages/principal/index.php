@@ -11,7 +11,9 @@
 </head>
 <body>
         <?php require ("../../header.view.php"); ?>
-        <h1>Página principal</h1>
+        <main>
+            <h1>Página principal</h1>
+        </main>
         <?php require ("../../footer.view.php"); ?>
 </body>
 </html>
