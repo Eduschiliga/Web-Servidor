@@ -1,10 +1,10 @@
-<main>
+<section>
     <a href="../../../controller/honorarios.controller.php">Voltar</a>
     <h1>Cadastrar / Editar - Honorário</h1>
     <form>
         <label>
             Número do processo:
-            <input type="text" name="nmr_processo" id="nmr_processo">
+            <input type="text" name="nmr_processo" id="nmr_processo" placeholder="Informe o número do processo...">
         </label>
 
         <label>
@@ -25,11 +25,13 @@
 
         <label>
             Metade para o escritório:
-            <input type="radio" name="metade_escritorio" value="sim">Sim
-            <input type="radio" name="metade_escritorio" value="nao">Não
+            <select id="metade_escritorio" name="metade_escritorio">
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
         </label>
 
         <input type="submit" value="Salvar">
     </form>
 
-</main>
+</section>

@@ -26,7 +26,39 @@
         </thead>
 
         <tbody>
-
+        <tr>
+            <td>987456</td>
+            <td>Eduardo Schiliga</td>
+            <td>16/04/2024</td>
+            <td>
+                <a href="../../../controller/honorarios.dados.controller.php?acao=editar"><img src="../../../images/icons/edit_icon.png" alt="Edit icon"></a>
+            </td>
+            <td>
+                <a href="../../../controller/honorarios.dados.controller.php?acao=visualizar"><img src="../../../images/icons/visibility_icon.png" alt="Edit icon"></a>
+            </td>
+        </tr>
+        <tr>
+            <td>159846</td>
+            <td>Marcos Artemio</td>
+            <td>02/05/2024</td>
+            <td>
+                <a href="../../../controller/honorarios.dados.controller.php?acao=editar"><img src="../../../images/icons/edit_icon.png" alt="Edit icon"></a>
+            </td>
+            <td>
+                <a href="../../../controller/honorarios.dados.controller.php?acao=visualizar"><img src="../../../images/icons/visibility_icon.png" alt="Edit icon"></a>
+            </td>
+        </tr>
+        <tr>
+            <td>056823</td>
+            <td>Fernanda Pachla</td>
+            <td>20/04/2024</td>
+            <td>
+                <a href="../../../controller/honorarios.dados.controller.php?acao=editar"><img src="../../../images/icons/edit_icon.png" alt="Edit icon"></a>
+            </td>
+            <td>
+                <a href="../../../controller/honorarios.dados.controller.php?acao=visualizar"><img src="../../../images/icons/visibility_icon.png" alt="Edit icon"></a>
+            </td>
+        </tr>
         </tbody>
     </table>
 </main>
