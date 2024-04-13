@@ -32,10 +32,10 @@
             <td>Eduardo Schiliga</td>
             <td>16/04/2024</td>
             <td>
-                <a href="form_honorarios_page.php?acao=editar"><img src="../../../images/icons/edit_icon.png" alt="Ícone Edital"></a>
+                <a href="../processos/form_processos_page.php?acao=editar"><img src="../../../images/icons/edit_icon.png" alt="Ícone Edital"></a>
             </td>
             <td>
-                <a href="form_honorarios_page.php?acao=visualizar"><img src="../../../images/icons/visibility_icon.png" alt="Ícone Visualizar"></a>
+                <a href="../processos/form_processos_page.php?acao=visualizar"><img src="../../../images/icons/visibility_icon.png" alt="Ícone Visualizar"></a>
             </td>
         </tr>
         </tbody>
