@@ -70,12 +70,12 @@
 
         public function buscarProcesso(): void{
             if($this->nmrProcesso == 123){
-                $this->cliente = 'José Pau Pequeno';
+                $this->cliente = 'Eduardo Schiliga';
                 $this->proximoPrazo = '20/05/2025';
                 $this->qrtHonorarios = 5;
                 $this->nmrParcelas = 6;
                 $this->escritorio = false;
-                $this->descricao = "Preguiça";
+                $this->descricao = 'Processo contra o imposto';
             }
         }
         

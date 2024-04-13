@@ -1,7 +1,7 @@
 <main>
     <h1>Processos</h1>
     <section>
-        <form method="get" action="#">
+        <form method="get" action="../../../controller/processo/processos.dados.controller.php">
             <label>
                 Buscar processo
                 <input type="text" name="nmrProcesso" placeholder="Informe o número do processo..." class="input-processo">
