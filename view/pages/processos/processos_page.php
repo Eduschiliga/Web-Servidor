@@ -10,6 +10,8 @@
         <link rel="stylesheet" type="text/css" href="../../styles/header.css"/>
         <link rel="stylesheet" type="text/css" href="../../styles/footer.css"/>
         <link rel="stylesheet" type="text/css" href="../../styles/table.css"/>
+        <link rel="stylesheet" type="text/css" href="../../styles/processos.css"/>
+        <link rel="stylesheet" type="text/css" href="../../styles/form.css"/>
     </head>
     <body>
         <?php require_once('../../modelos/header.php') ?>

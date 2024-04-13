@@ -1,33 +1,33 @@
-<section>
-    <a href="processos_page.php" id="btn_voltar">Voltar</a>
+<main class="container">
+    <a href="processos_page.php" id="btn_voltar" class="button-acao">Voltar</a>
     <h1>Cadastrar / Editar</h1>
-    <form action="">
-        <label>
+    <form class="container-form">
+        <label class="rotulo">
             Número do processo:
-            <input placeholder="Informe o número do processo" type="text" name="nmr_processo" id="nmr_processo" value=<?= $_SESSION['nmrProcesso'];?>>
+            <input placeholder="Informe o número do processo" type="text" name="nmr_processo" id="nmr_processo" class="input-dado">
         </label>
 
-        <label>
+        <label class="rotulo">
             Nome Cliente:
-            <input placeholder="Informe o nome do cliente" type="text" name="nome_cliente" id="nome_cliente" value=<?= $_SESSION['cliente']; ?> >
+            <input placeholder="Informe o nome do cliente" type="text" name="nome_cliente" id="nome_cliente" class="input-dado">
         </label>
 
-        <label>
+        <label class="rotulo">
             Descrição:
-            <input placeholder="Informe a descrição" type="text" name="descricao" id="descricao" value=<?= $_SESSION['descricao']; ?> >
+            <input placeholder="Informe a descrição" type="text" name="descricao" id="descricao" class="input-dado">
         </label>
 
-        <label>
+        <label class="rotulo">
             Próximo prazo:
-            <input type="date" name="data_proximo_prazo" id="data_proximo_prazo" value=<?= $_SESSION['proximoPrazo']; ?>>
+            <input type="date" name="data_proximo_prazo" id="data_proximo_prazo" class="input-dado">
         </label>
 
-        <label>
+        <label class="rotulo">
             Honorários:
-            <input type="number" id="qtd_honorarios" name="qtd_honorarios" min="0" step="0.01" placeholder="R$0.00" value=<?= $_SESSION['qtdHonorarios']; ?>>
+            <input type="number" id="qtd_honorarios" name="qtd_honorarios" min="0" step="0.01" placeholder="R$0.00" class="input-dado">
         </label>
 
-        <label>Selecione o número de parcelas:
+        <label class="rotulo">Selecione o número de parcelas:
             <select id="nmr_parcelas" name="nmr_parcelas">
                 <option value="1">1 parcela</option>
                 <option value="2">2 parcelas</option>
@@ -38,7 +38,7 @@
             </select>
         </label>
 
-        <label>
+        <label class="rotulo">
             Metade para o escritório:
             <select id="metade_escritorio" name="metade_escritorio">
                 <option value="sim">Sim</option>
@@ -46,6 +46,6 @@
             </select>
         </label>
 
-        <input type="submit" value="Salvar" id="input_submit">
+        <input type="submit" value="Salvar" id="input_submit" class="button-enviar">
     </form>
-</section>
+</main>

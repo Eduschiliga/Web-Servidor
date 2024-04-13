@@ -9,10 +9,14 @@
     <link rel="stylesheet" type="text/css" href="../../styles/global.css"/>
     <link rel="stylesheet" type="text/css" href="../../styles/header.css"/>
     <link rel="stylesheet" type="text/css" href="../../styles/footer.css"/>
+    <link rel="stylesheet" type="text/css" href="../../styles/table.css"/>
+    <link rel="stylesheet" type="text/css" href="../../styles/processos.css"/>
+    <link rel="stylesheet" type="text/css" href="../../styles/form.css"/>
+
+
 </head>
 <body>
 <?php require_once('../../modelos/header.php') ?>
-<h1>Processos - Formulário</h1>
 <?php require_once('../../modelos/processos/form.view.php') ?>
 <?php require_once('../../modelos/footer.php') ?>
 </body>

@@ -1,0 +1,64 @@
+.container {
+    background-color: white;
+}
+
+.barra-busca {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+
+    input {
+        padding: 8px;
+        width: 300px;
+        border-radius: 5px;
+        border: 2px solid #cbcbcb;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+.container-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+}
+
+.rotulo {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.input-dado {
+    padding: 3px;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 5px 2px 4px rgba(0, 0, 0, 0.09);
+    border: 2px solid #cbcbcb;
+}
+
+.button-enviar {
+    background-color: #2BD968;
+    color: white;
+    width: 150px;
+    padding: 10px 8px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.1s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+}

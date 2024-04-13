@@ -1,5 +1,5 @@
 <main>
-    <h1>Dados sobre Processos e Honorários</h1>
+    <h1>> Dados sobre Processos e Honorários</h1>
     <table>
         <thead>
         <tr>
@@ -16,13 +16,14 @@
         </tbody>
     </table>
 
-    <h2>Processos do dia</h2>
+    <h2>> Processos do dia</h2>
     <table>
         <thead>
         <tr>
             <th>Número do processo</th>
             <th>Cliente</th>
             <th>Próximo prazo</th>
+            <th colspan="2">Opções</th>
         </tr>
         </thead>
 

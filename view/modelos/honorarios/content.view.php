@@ -1,26 +1,29 @@
 <main>
     <h1>Honorários</h1>
+
     <section>
+        <form method="get" action="#">
+            <label class="barra-busca">
+                Buscar honorários
+                <input type="text" name="nmrProcesso" placeholder="Informe o número do processo..." class="input-processo">
+                <button type="submit"><img src="../../../images/icons/search_icon.png" alt="Ícone de busca"></button>
+            </label>
+        </form>
+    </section>
+
+    <section class="container-button">
         <ul>
-            <li><a href="form_honorarios_page.php?acao=incluir">INCLUIR</a></li>
+            <li><a href="form_honorarios_page.php?acao=incluir" class="button-acao">INCLUIR</a></li>
         </ul>
     </section>
 
-    <section>
-        <form method="get" action="">
-            <label>
-                Buscar Honorário
-                <input type="text" name="termo_busca" placeholder="Informe o número do processo...">
-            </label>
-            <button type="submit"><img src="/images/icons/search_icon.png" alt="Ícone de busca"></button>
-        </form>
-    </section>
     <table>
         <thead>
         <tr>
             <th>Número processo</th>
             <th>Cliente</th>
             <th>Próximo prazo</th>
+            <th colspan="2">Opções</th>
         </tr>
         </thead>
 

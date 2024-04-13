@@ -1,18 +1,18 @@
-<section>
-    <a href="honorarios_page.php">Voltar</a>
+<main class="container">
+    <a href="honorarios_page.php" class="button-acao">Voltar</a>
     <h1>Cadastrar / Editar - Honorário</h1>
-    <form>
-        <label>
+    <form class="container-form">
+        <label class="rotulo">
             Número do processo:
-            <input type="text" name="nmr_processo" id="nmr_processo" placeholder="Informe o número do processo...">
+            <input type="text" name="nmr_processo" id="nmr_processo" placeholder="Informe o número do processo..." class="input-dado">
         </label>
 
-        <label>
+        <label class="rotulo">
             Honorários:
-            <input type="number" id="qtd_honorarios" name="qtd_honorarios" min="0" step="0.01" placeholder="R$0.00">
+            <input type="number" id="qtd_honorarios" name="qtd_honorarios" min="0" step="0.01" placeholder="R$0.00" class="input-dado">
         </label>
 
-        <label>Selecione o número de parcelas:
+        <label class="rotulo">Selecione o número de parcelas:
             <select id="nmr_parcelas" name="nmr_parcelas">
                 <option value="1">1 parcela</option>
                 <option value="2">2 parcelas</option>
@@ -23,7 +23,7 @@
             </select>
         </label>
 
-        <label>
+        <label class="rotulo">
             Metade para o escritório:
             <select id="metade_escritorio" name="metade_escritorio">
                 <option value="sim">Sim</option>
@@ -31,7 +31,7 @@
             </select>
         </label>
 
-        <input type="submit" value="Salvar">
+        <input type="submit" value="Salvar" class="button-enviar">
     </form>
 
-</section>
+</main>
