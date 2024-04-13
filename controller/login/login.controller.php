@@ -1,11 +1,14 @@
 <?php
 
 if(isset($_POST["entrar"])){
+    require('model/Usuario.php');
 
     $oab = $_POST['oab'] ?? '';
     $senha = $_POST['senha'] ?? '';
 
-    if($oab == 'admin' && $senha == 'admin') {
+    $usuario = new Usuario($oab,$senha);
+
+    if($usuario.buscarUsuario()) {
         session_start();
         $_SESSION['oab'] = $oab;
         $_SESSION['logado'] = true;
