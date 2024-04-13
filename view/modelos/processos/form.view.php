@@ -4,27 +4,27 @@
     <form class="container-form">
         <label class="rotulo">
             Número do processo:
-            <input placeholder="Informe o número do processo" type="text" name="nmr_processo" id="nmr_processo" class="input-dado">
+            <input placeholder="Informe o número do processo" type="text" name="nmr_processo" id="nmr_processo" class="input-dado" value=<?= $_SESSION['nmrProcesso'];?>>
         </label>
 
         <label class="rotulo">
             Nome Cliente:
-            <input placeholder="Informe o nome do cliente" type="text" name="nome_cliente" id="nome_cliente" class="input-dado">
+            <input placeholder="Informe o nome do cliente" type="text" name="nome_cliente" id="nome_cliente" class="input-dado" value=<?= $_SESSION['cliente']; ?> >
         </label>
 
         <label class="rotulo">
             Descrição:
-            <input placeholder="Informe a descrição" type="text" name="descricao" id="descricao" class="input-dado">
+            <input placeholder="Informe a descrição" type="text" name="descricao" id="descricao" class="input-dado" value=<?= $_SESSION['descricao']; ?> >
         </label>
 
         <label class="rotulo">
             Próximo prazo:
-            <input type="date" name="data_proximo_prazo" id="data_proximo_prazo" class="input-dado">
+            <input type="date" name="data_proximo_prazo" id="data_proximo_prazo" class="input-dado" value=<?= $_SESSION['proximoPrazo']; ?>>
         </label>
 
         <label class="rotulo">
             Honorários:
-            <input type="number" id="qtd_honorarios" name="qtd_honorarios" min="0" step="0.01" placeholder="R$0.00" class="input-dado">
+            <input type="number" id="qtd_honorarios" name="qtd_honorarios" min="0" step="0.01" placeholder="R$0.00" class="input-dado" value=<?= $_SESSION['qtdHonorarios']; ?>>
         </label>
 
         <label class="rotulo">Selecione o número de parcelas:

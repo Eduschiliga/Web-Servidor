@@ -10,7 +10,7 @@
             $processo->buscarProcesso();
             $_SESSION['cliente'] = $processo->getCliente();
             $_SESSION['proximoPrazo'] = $processo->getProximoPrazo();
-            #$_SESSION['qtdHonorarios'] = (string) $processo->getQtdHonorarios(); Realizar por meio de JS
+            $_SESSION['qtdHonorarios'] = (string) $processo->getQtdHonorarios();
             $_SESSION['descricao'] = $processo->getDescricao();
         }else{
             $_SESSION['nmrProcesso'] = "";
