@@ -1,5 +1,5 @@
 <section>
-    <a href="../../../controller/processos.controller.php" id="btn_voltar">Voltar</a>
+    <a href="processos_page.php" id="btn_voltar">Voltar</a>
     <h1>Cadastrar / Editar</h1>
     <form action="">
         <label>

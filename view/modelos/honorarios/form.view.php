@@ -1,5 +1,5 @@
 <section>
-    <a href="../../../controller/honorarios.controller.php">Voltar</a>
+    <a href="honorarios_page.php">Voltar</a>
     <h1>Cadastrar / Editar - Honorário</h1>
     <form>
         <label>
