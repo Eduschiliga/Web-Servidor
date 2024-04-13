@@ -14,7 +14,7 @@ if(isset($_POST["entrar"])){
         $_SESSION['logado'] = true;
         $_SESSION['usuario'] = 'Administrador';
         $erro = false;
-        header('Location: ../../view/pages/home/home_page.php');
+        header('Location: ../home/home.controller.php');
         exit();
     } else {
         header('Location: ../../index.php?erro=true');
@@ -24,6 +24,6 @@ if(isset($_POST["entrar"])){
 require('view/modelos/login.php');
 
 if(!empty($_SESSION['logado'])) {
-    header('Location: ../../view/pages/home/home_page.php');
+    header('Location: ../home/home.controller.php');
     exit();
 }

@@ -70,7 +70,7 @@
 
         public function buscarProcesso(): void{
             if($this->nmrProcesso == 123){
-                $this->cliente = "José Pau Pequeno";
+                $this->cliente = 'José Pau Pequeno';
                 $this->proximoPrazo = '20/05/2025';
                 $this->qrtHonorarios = 5;
                 $this->nmrParcelas = 6;
