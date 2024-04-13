@@ -7,6 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Login</title>
         <link rel="stylesheet" type="text/css" href="view/styles/global.css" />
+        <link rel="stylesheet" type="text/css" href="view/styles/login.css" />
     </head>
     <body>
         <?php require ('controller/login/login.controller.php'); ?>
