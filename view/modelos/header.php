@@ -11,13 +11,13 @@
         <nav class="container-menu">
             <ul class="lista-menu">
                 <li>
-                    <a href="../home/home_page.php" class="menu-item"> Página Inicial</a>
+                    <a href="../../../controller/home/home.controller.php" class="menu-item"> Página Inicial</a>
                 </li>
                 <li>
-                    <a href="../processos/processos_page.php" class="menu-item">Processos</a>
+                    <a href="../../../controller/processo/processos.controller.php" class="menu-item">Processos</a>
                 </li>
                 <li>
-                    <a href="../honorarios/honorarios_page.php" class="menu-item">Honorários</a>
+                    <a href="../../../controller/honorario/honorarios.controller.php" class="menu-item">Honorários</a>
                 </li>
             </ul>
         </nav>
