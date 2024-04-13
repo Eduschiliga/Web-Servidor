@@ -1,18 +1,18 @@
 <main>
     <h1>Processos</h1>
     <section>
-        <form method="get" action="../../../controller/processo/processos.dados.controller.php">
-            <label>
-                Buscar processo
+        <form method="get" action="#">
+            <label class="barra-busca">
+                Buscar Processo
                 <input type="text" name="nmrProcesso" placeholder="Informe o número do processo..." class="input-processo">
+                <button type="submit"><img src="../../../images/icons/search_icon.png" alt="Ícone de busca"></button>
             </label>
-            <button type="submit"><img src="/images/icons/search_icon.png" alt="Ícone de busca"></button>
         </form>
     </section>
 
     <section class="container-button">
         <ul>
-            <li><a href="form_processos_page.php?acao=incluir">INCLUIR</a></li>
+            <li><a href="form_processos_page.php?acao=incluir" class="button-acao">INCLUIR</a></li>
         </ul>
     </section>
 
@@ -22,6 +22,7 @@
             <th>Número processo</th>
             <th>Cliente</th>
             <th>Próximo prazo</th>
+            <th colspan="2">Opções</th>
         </tr>
         </thead>
 
