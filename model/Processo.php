@@ -8,8 +8,14 @@
         private bool $escritorio;
         private string $descricao;
 
-        public function __construct($nmrProcesso){
-            $this->nmrProcesso = $nmrProcesso;
+        public function __construct(){
+            $this->nmrProcesso = 0;
+            $this->cliente = '';
+            $this->proximoPrazo = '';
+            $this->qtdHonorarios = 0;
+            $this->nmrParcelas = 0;
+            $this->escritorio = false;
+            $this->descricao = '';
         }
 
         public function getNmrProcesso(): int{
@@ -17,7 +23,7 @@
         }
 
         public function setNmrProcesso($nmrProcesso): void{
-            $this->nrmProcesso = $nmrProcesso;
+            $this->nmrProcesso = $nmrProcesso;
         }
 
         public function getCliente(): string{

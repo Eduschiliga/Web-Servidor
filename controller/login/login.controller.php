@@ -10,9 +10,8 @@
 
         if($usuario->buscarUsuario()) {
             session_start();
-            $_SESSION['oab'] = $oab;
             $_SESSION['logado'] = true;
-            $_SESSION['usuario'] = 'Administrador';
+            $_SESSION['usuario'] = serialize($usuario);
             $erro = false;
             header('Location: ../home/home.controller.php');
             exit();

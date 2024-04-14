@@ -1,4 +1,8 @@
-<?php session_start();?>
+<?php 
+    session_start();
+    require('../../../model/Usuario.php');
+    $usuario = unserialize($_SESSION['usuario']);    
+?>
 
 <header>
     <section>
@@ -25,8 +29,8 @@
     </section>
 
     <section class="container-info">
-        <span><strong>Usuário:</strong> <?= $_SESSION['usuario'] ?></span>
-        <span><strong>OAB:</strong> <?= $_SESSION['oab'] ?></span>
+        <span><strong>Usuário:</strong> <?= $usuario->getNome(); ?></span>
+        <span><strong>OAB:</strong> <?= $usuario->getOab(); ?></span>
         <a href="../../../controller/login/logout.php" class="logout">Logout</a>
     </section>
 </header>
