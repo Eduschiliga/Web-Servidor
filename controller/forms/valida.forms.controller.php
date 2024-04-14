@@ -28,8 +28,11 @@ if(isset($_POST["form-honorarios"])){
     if (!empty($erros)) {
         $_SESSION['erros'] = $erros;
         header("Location: ../../view/pages/honorarios/form_honorarios_page.php");
-        exit();
+    } else {
+        $_SESSION['success_message'] = "Os dados foram enviados com sucesso!";
+        header("Location: ../../view/pages/honorarios/honorarios_page.php");
     }
+    exit();
 
 } else if(isset($_POST["form-processos"])){
 
@@ -50,6 +53,10 @@ if(isset($_POST["form-honorarios"])){
     if (!empty($erros)) {
         $_SESSION['erros'] = $erros;
         header("Location: ../../view/pages/processos/form_processos_page.php");
+        exit();
+    } else {
+        $_SESSION['success_message'] = "Os dados foram enviados com sucesso!";
+        header("Location: ../../view/pages/processos/processos_page.php");
         exit();
     }
 }
