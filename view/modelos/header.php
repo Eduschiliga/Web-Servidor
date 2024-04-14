@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start();?>
 
 <header>
     <section>
@@ -16,6 +16,9 @@
                 </li>
                 <li>
                     <a href="../../../controller/honorario/honorarios.controller.php" class="menu-item">Honorários</a>
+                </li>
+                <li>
+                    <a href="../../../controller/usuario/usuario.controller.php" class="menu-item">Usuários</a>
                 </li>
             </ul>
         </nav>
