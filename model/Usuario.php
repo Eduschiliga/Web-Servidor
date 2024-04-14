@@ -33,7 +33,7 @@
         public function buscarUsuario():bool{
             if($this->oab == 'admin' && $this->senha == 'admin'){
                 $this->nome = 'Administrador';
-                $this->oab = '9999'
+                $this->oab = '9999';
                 return true;
             }else{
                 return false;

@@ -1,5 +1,4 @@
 <?php
-    session_start();
     require_once('../../../model/Processo.php');
     $processo = unserialize($_SESSION['processo']);
 ?>
@@ -9,7 +8,7 @@
 
     <!-- Exibindo os erros -->
     <?php if (!empty($_SESSION['erros'])): ?>
-        <div class="alert alert-danger">
+        <div>
             <ul>
                 <?php foreach ($_SESSION['erros'] as $erro): ?>
                     <li><?php echo $erro; ?></li>
@@ -22,7 +21,7 @@
     <form action="../../../controller/forms/valida.forms.controller.php?form=processos" class="container-form" method="post">
         <label class="rotulo">
             Número do processo:
-            <input placeholder="Informe o número do processo" type="text" name="nmr_processo" id="nmr_processo" class="input-dado" value=<?= $processo->getNmrProcesso(); ?>>
+            <input placeholder="Informe o número do processo" type="text" name="nmr_processo" id="nmr_processo" class="input-dado" value=<?= $processo->getNmrProcesso(); ?> >
         </label>
 
         <label class="rotulo">
