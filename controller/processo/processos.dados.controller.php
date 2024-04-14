@@ -3,21 +3,13 @@
     session_start();
 
     if(!empty($_SESSION['logado'])) {
-        require '../../model/Processo.php';
         if(!empty($_GET['nmrProcesso'])){
-            $_SESSION['nmrProcesso'] = $_GET['nmrProcesso'];
-            $processo = new Processo((int) $_SESSION['nmrProcesso']);
+            require '../../model/Processo.php';
+            $processo = new Processo((int) $_GET['nmrProcesso']);
             $processo->buscarProcesso();
-            $_SESSION['cliente'] = $processo->getCliente();
-            $_SESSION['proximoPrazo'] = $processo->getProximoPrazo();
-            $_SESSION['qtdHonorarios'] = (string) $processo->getQtdHonorarios();
-            $_SESSION['descricao'] = $processo->getDescricao();
+            $_SESSION['processo'] = serialize($processo);
         }else{
-            $_SESSION['nmrProcesso'] = "";
-            $_SESSION['cliente'] = "";
-            $_SESSION['proximoPrazo'] = "";
-            $_SESSION['qtdHonorarios'] = "";
-            $_SESSION['descricao'] = "";
+            $_SESSION['processo'] = '';
         }
         header('Location: ../../view/pages/processos/form_processos_page.php');
     } else {
