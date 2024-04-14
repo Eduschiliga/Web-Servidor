@@ -1,8 +1,11 @@
 main {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    gap: 12px;
+    gap: 20px;
+
+    section {
+        width: 100%;
+    }
 
     h1 {
         background-color: #f5f5fa;
@@ -13,13 +16,4 @@ main {
         border: 2px solid #cbcbcb;
         font-size: 18px;
     }
-}
-
-.container-button ul {
-    list-style: none;
-    margin-top: 5px;
-}
-
-.container-busca {
-    width: 100%;
 }

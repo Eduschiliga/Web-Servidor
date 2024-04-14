@@ -10,7 +10,8 @@
         <link rel="stylesheet" type="text/css" href="../../styles/header.css"/>
         <link rel="stylesheet" type="text/css" href="../../styles/footer.css"/>
         <link rel="stylesheet" type="text/css" href="../../styles/table.css"/>
-
+        <link rel="stylesheet" type="text/css" href="../../styles/home.css"/>
+        <link rel="icon" type="image/x-icon" href="../../../images/icons/favicon.ico">
     </head>
     <body>
         <?php require_once('../../modelos/header.php') ?>

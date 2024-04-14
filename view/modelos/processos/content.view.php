@@ -1,9 +1,8 @@
 <main>
     <h1>Processos</h1>
-    <section>
+    <section class="container-busca">
         <form method="get" action="../../../controller/processo/processos.dados.controller.php">
             <label class="barra-busca">
-                Buscar Processo
                 <input type="text" name="nmrProcesso" placeholder="Informe o número do processo..." class="input-processo">
                 <button type="submit"><img src="../../../images/icons/search_icon.png" alt="Ícone de busca"></button>
             </label>

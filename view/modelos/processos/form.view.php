@@ -1,6 +1,6 @@
 <main class="container">
-    <a href="processos_page.php" id="btn_voltar" class="button-acao">Voltar</a>
     <h1>Cadastrar / Editar</h1>
+    <a href="processos_page.php" id="btn_voltar" class="button-acao">Voltar</a>
     <form class="container-form">
         <label class="rotulo">
             Número do processo:

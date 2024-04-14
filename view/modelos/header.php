@@ -1,10 +1,8 @@
 <?php session_start(); ?>
 
 <header>
-    <section class="container-info">
-        <span><strong>Usuário:</strong> <?= $_SESSION['usuario'] ?></span>
-        <span><strong>OAB:</strong> <?= $_SESSION['oab'] ?></span>
-        <a href="../../../controller/login/logout.php" class="logout">Logout</a>
+    <section>
+        <img src="../../../images/logos/logo.png" alt="Logo EFM-SYSTEM" width="130px" height="130px">
     </section>
 
     <section>
@@ -21,5 +19,11 @@
                 </li>
             </ul>
         </nav>
+    </section>
+
+    <section class="container-info">
+        <span><strong>Usuário:</strong> <?= $_SESSION['usuario'] ?></span>
+        <span><strong>OAB:</strong> <?= $_SESSION['oab'] ?></span>
+        <a href="../../../controller/login/logout.php" class="logout">Logout</a>
     </section>
 </header>

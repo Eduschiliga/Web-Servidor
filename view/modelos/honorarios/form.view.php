@@ -1,6 +1,6 @@
 <main class="container">
+    <h1>Cadastrar / Editar - Honorário </h1>
     <a href="honorarios_page.php" class="button-acao">Voltar</a>
-    <h1>Cadastrar / Editar - Honorário</h1>
     <form class="container-form">
         <label class="rotulo">
             Número do processo:

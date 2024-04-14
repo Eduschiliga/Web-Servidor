@@ -1,10 +1,8 @@
 <main>
     <h1>Honorários</h1>
-
-    <section>
+    <section class="container-busca">
         <form method="get" action="#">
             <label class="barra-busca">
-                Buscar honorários
                 <input type="text" name="nmrProcesso" placeholder="Informe o número do processo..." class="input-processo">
                 <button type="submit"><img src="../../../images/icons/search_icon.png" alt="Ícone de busca"></button>
             </label>

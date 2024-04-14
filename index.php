@@ -8,6 +8,7 @@
         <title>Login</title>
         <link rel="stylesheet" type="text/css" href="view/styles/global.css" />
         <link rel="stylesheet" type="text/css" href="view/styles/login.css" />
+        <link rel="icon" type="image/x-icon" href="images/icons/favicon.ico">
     </head>
     <body>
         <?php require ('controller/login/login.controller.php'); ?>

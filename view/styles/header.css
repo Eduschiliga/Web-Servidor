@@ -31,6 +31,11 @@ header {
     margin-top: 3px;
 }
 
+.logout:hover {
+    background-color: #4343FDED;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.32);
+}
+
 .lista-menu {
     display: flex;
     list-style: none;
@@ -42,17 +47,16 @@ header {
 
 .menu-item {
     color: white;
-    background-color: #0D0D0D;
+    background-color: #2727fd;
     text-decoration: none;
-    padding: 16px 12px;
+    padding: 12px 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     font-weight: bold;
-    font-size: 1em;
 }
 
 .menu-item:hover {
-    background-color: #262626;
+    background-color: #4343FDED;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.32);
 }
