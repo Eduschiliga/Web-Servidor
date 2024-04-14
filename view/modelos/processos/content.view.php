@@ -11,7 +11,7 @@
 
     <section class="container-button">
         <ul>
-            <li><a href="form_processos_page.php?acao=incluir" class="button-acao">INCLUIR</a></li>
+            <li><a href="../../../controller/processo/processos.dados.controller.php?acao=incluir" class="button-acao">INCLUIR</a></li>
         </ul>
     </section>
 
@@ -31,10 +31,10 @@
             <td>Eduardo Schiliga</td>
             <td>16/04/2024</td>
             <td>
-                <a href="form_processos_page.php?acao=editar"><img src="../../../images/icons/edit_icon.png" alt="Ícone Editar"></a>
+                <a href="../../../controller/processo/processos.dados.controller.php?acao=editar"><img src="../../../images/icons/edit_icon.png" alt="Ícone Editar"></a>
             </td>
             <td>
-                <a href="form_processos_page.php?acao=visualizar"><img src="../../../images/icons/visibility_icon.png" alt="Ícone Visualizar"></a>
+                <a href="../../../controller/processo/processos.dados.controller.php?acao=visualizar"><img src="../../../images/icons/visibility_icon.png" alt="Ícone Visualizar"></a>
             </td>
         </tr>
         </tbody>

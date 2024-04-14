@@ -1,7 +1,7 @@
 <main>
     <h1>Honorários</h1>
     <section class="container-busca">
-        <form method="get" action="#">
+        <form method="get" action="../../../controller/honorario/honorarios.dados.controller.php">
             <label class="barra-busca">
                 <input type="text" name="nmrProcesso" placeholder="Informe o número do processo..." class="input-processo">
                 <button type="submit"><img src="../../../images/icons/search_icon.png" alt="Ícone de busca"></button>
@@ -11,7 +11,7 @@
 
     <section class="container-button">
         <ul>
-            <li><a href="form_honorarios_page.php?acao=incluir" class="button-acao">INCLUIR</a></li>
+            <li><a href="../../../controller/honorario/honorarios.dados.controller.php?acao=incluir" class="button-acao">INCLUIR</a></li>
         </ul>
     </section>
 
@@ -31,10 +31,10 @@
             <td>Eduardo Schiliga</td>
             <td>16/04/2024</td>
             <td>
-                <a href="form_honorarios_page.php?acao=editar"><img src="../../../images/icons/edit_icon.png" alt="Ícone Edital"></a>
+                <a href="../../../controller/honorario/honorarios.dados.controller.php?acao=editar"><img src="../../../images/icons/edit_icon.png" alt="Ícone Edital"></a>
             </td>
             <td>
-                <a href="form_honorarios_page.php?acao=visualizar"><img src="../../../images/icons/visibility_icon.png" alt="Ícone Visualizar"></a>
+                <a href="../../../controller/honorario/honorarios.dados.controller.php?acao=visualizar"><img src="../../../images/icons/visibility_icon.png" alt="Ícone Visualizar"></a>
             </td>
         </tr>
         </tbody>

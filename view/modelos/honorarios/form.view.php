@@ -1,6 +1,6 @@
 <main class="container">
     <h1>Cadastrar / Editar - Honorário </h1>
-    <a href="honorarios_page.php" class="button-acao">Voltar</a>
+    <a href="../../../controller/honorarios.controler.php" class="button-acao">Voltar</a>
 
     <!-- Exibindo os erros -->
     <?php if (!empty($_SESSION['erros'])): ?>
