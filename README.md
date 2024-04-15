@@ -11,6 +11,7 @@ Projeto realizado para disciplina de Desenvolvimento Web Servidor
 > Controle de Processos  
 > Controle de Honorários  
 > Banco de Dados
+> Adicionar privilégios para os formulários de Processos e Honorários, de apenas visualizar e editar    
 
 ### Instalação
 > Baixar o software XAMPP  
