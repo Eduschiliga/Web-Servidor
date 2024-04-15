@@ -1,41 +1,37 @@
 <?php
     require_once('../../../model/Processo.php');
     $processo = unserialize($_SESSION['processo']);
+    $erros = $_SESSION['erros'] ?? [];
 ?>
 <main class="container">
     <h1>Cadastrar / Editar</h1>
-    <a href="../../../controller/processo/processos.controller.php" id="btn_voltar" class="button-acao">Voltar</a>
+    <a href="../../../controller/processo/processos.controller.php" id="btn_voltar" class="button-acao"><img src="../../../images/icons/voltar.png" alt="Icon Voltar">Voltar</a>
 
-    <!-- Exibindo os erros -->
-    <?php if (!empty($_SESSION['erros'])): ?>
-        <div>
-            <ul>
-                <?php foreach ($_SESSION['erros'] as $erro): ?>
-                    <li><?php echo $erro; ?></li>
-                <?php endforeach; ?>
-            </ul>
+    <!-- Exibe mensagens de erro -->
+    <?php foreach ($erros as $campo => $mensagem): ?>
+        <div style="background-color: rgba(255, 0, 0, 0.63); padding: 10px; border-radius: 5px;">
+            <p style="color: white; font-weight: bold;"><?= $mensagem ?></p>
         </div>
-        <?php unset($_SESSION['erros']); ?>
-    <?php endif; ?>
+    <?php endforeach;  unset($_SESSION['erros']); ?>
 
     <form action="../../../controller/forms/valida.forms.controller.php?form=processos" class="container-form" method="post">
         <label class="rotulo">
-            Número do processo:
-            <input placeholder="Informe o número do processo" type="text" name="nmr_processo" id="nmr_processo" class="input-dado" value=<?= $processo->getNmrProcesso(); ?> >
+            Número do processo *
+            <input placeholder="Informe o número do processo" type="text" name="nmr_processo" id="nmr_processo"  maxlength="16" class="input-dado" value=<?= $processo->getNmrProcesso(); ?> >
         </label>
 
         <label class="rotulo">
-            Nome Cliente:
+            Nome Cliente *
             <input placeholder="Informe o nome do cliente" type="text" name="nome_cliente" id="nome_cliente" class="input-dado" value=<?= $processo->getCliente(); ?> >
         </label>
 
         <label class="rotulo">
-            Descrição:
+            Descrição
             <input placeholder="Informe a descrição" type="text" name="descricao" id="descricao" class="input-dado" value=<?= $processo->getDescricao(); ?> >
         </label>
 
         <label class="rotulo">
-            Próximo prazo:
+            Próximo prazo *
             <input type="date" name="data_proximo_prazo" id="data_proximo_prazo" class="input-dado" value=<?= $processo->getProximoPrazo(); ?>>
         </label>
 

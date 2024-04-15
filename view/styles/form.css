@@ -69,3 +69,15 @@
     border: none;
     cursor: pointer;
 }
+
+.container-msg-erro {
+    background-color: rgba(255, 0, 0, 0.63);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0 10px 0;
+}
+
+.msg-erro {
+    color: white;
+    font-weight: bold;
+}

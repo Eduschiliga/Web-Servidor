@@ -14,11 +14,10 @@
             $_SESSION['usuario'] = serialize($usuario);
             $erro = false;
             header('Location: ../home/home.controller.php');
-            exit();
         } else {
             header('Location: ../../index.php?erro=true');
-            exit();
         }
+        exit();
     }
     require('view/modelos/login.php');
 
@@ -26,5 +25,3 @@
         header('Location: ../home/home.controller.php');
         exit();
     }
-
-?>

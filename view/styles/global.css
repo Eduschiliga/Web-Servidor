@@ -27,6 +27,10 @@ main {
 
 .button-acao {
     background-color: #2727fd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
     color: white;
     padding: 10px 8px;
     font-weight: bold;

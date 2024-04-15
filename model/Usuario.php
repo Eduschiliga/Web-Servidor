@@ -31,13 +31,12 @@
         }
 
         public function buscarUsuario():bool{
-            if($this->oab == 'admin' && $this->senha == 'admin'){
-                $this->nome = 'Administrador';
-                $this->oab = '9999';
+            if($this->oab == '123456789' && $this->senha == 'admin'){
+                $this->nome = 'Eduardo Schiliga';
+                $this->oab = '123456789';
                 return true;
-            }else{
-                return false;
             }
+            return false;
         }
         
         public function criarUsuario(){
@@ -55,5 +54,4 @@
         public function listarTodos(){
             //A fazer
         }
-    }  
-?>
+    }

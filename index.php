@@ -12,7 +12,5 @@
     </head>
     <body>
         <?php require ('controller/login/login.controller.php'); ?>
-
-
     </body>
 </html>

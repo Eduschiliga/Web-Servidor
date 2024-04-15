@@ -1,3 +1,4 @@
 <main>
-    <h1>Usuários</h1>
+    <h1>Perfil do Usuário</h1>
+
 </main>

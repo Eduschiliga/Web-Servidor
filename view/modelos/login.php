@@ -1,8 +1,8 @@
-<?php $erro = isset($_GET['erro']) ? true : false ?>
+<?php $erro = isset($_GET['erro']) ?>
 
 <section>
     <div class="login-container">
-
+        <h1>Realize o seu Login</h1>
         <form class="login-form" action="controller/login/login.controller.php" method="post">
             <?php if($erro) : ?>
                 <div class="container-msg-erro">

@@ -6,23 +6,25 @@
 
 <header>
     <section>
-        <img src="../../../images/logos/logo.png" alt="Logo EFM-SYSTEM" width="130px" height="130px">
+        <img src="../../../images/logos/logo_atual.png" alt="Logo EFM-SYSTEM" width="130px" height="130px">
     </section>
 
     <section>
         <nav class="container-menu">
             <ul class="lista-menu">
                 <li>
-                    <a href="../../../controller/home/home.controller.php" class="menu-item"> Página Inicial</a>
+                    <a href="../../../controller/home/home.controller.php" class="menu-item">
+                        <img src="../../../images/icons/home.png" alt="Icon Home"> Página Inicial
+                    </a>
                 </li>
                 <li>
-                    <a href="../../../controller/processo/processos.controller.php" class="menu-item">Processos</a>
+                    <a href="../../../controller/processo/processos.controller.php" class="menu-item"><img src="../../../images/icons/processos.png" alt="Icon Processos">Processos</a>
                 </li>
                 <li>
-                    <a href="../../../controller/honorario/honorarios.controller.php" class="menu-item">Honorários</a>
+                    <a href="../../../controller/honorario/honorarios.controller.php" class="menu-item"><img src="../../../images/icons/honorarios.png" alt="Icon Honorários">Honorários</a>
                 </li>
                 <li>
-                    <a href="../../../controller/usuario/usuario.controller.php" class="menu-item">Usuários</a>
+                    <a href="../../../controller/usuario/usuario.controller.php" class="menu-item"><img src="../../../images/icons/user.png" alt="Icon User">Usuário</a>
                 </li>
             </ul>
         </nav>
