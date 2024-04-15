@@ -27,4 +27,4 @@ Projeto realizado para disciplina de Desenvolvimento Web Servidor
 ### Contribuidores
 - **Eduardo Schiliga** -> View / Controller  
 - **Marcos Artêmio Gomes dos Santos** -> Model / Controller  
-- **Fernanda Pachla de lima** -> View
+- **Fernanda Pachla de lima** -> View / MSG erros nos formulários
