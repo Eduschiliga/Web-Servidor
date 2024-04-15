@@ -13,11 +13,11 @@ Projeto realizado para disciplina de Desenvolvimento Web Servidor
 > Banco de Dados
 
 ### Instalação
-> Baixar o software XAMPP
-> Clonar o repositório do projeto
-> Ir na pasta de instalação do XAMPP, localizar a pasta HTDOCS e substituir o que contém dentro dela pela pasta do projeto
-> Inicializar o servidor do Apache no XAMPP
-> Ir até o seu navegador e digitar localhost na url
+> Baixar o software XAMPP  
+> Clonar o repositório do projeto  
+> Ir na pasta de instalação do XAMPP, localizar a pasta HTDOCS e substituir o que contém dentro dela pela pasta do projeto  
+> Inicializar o servidor do Apache no XAMPP  
+> Ir até o seu navegador e digitar localhost na url  
 
 ### Bugs
 > Ao buscar por processo não é possível carregar próximo prazo para o HTML  
