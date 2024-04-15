@@ -16,9 +16,9 @@ Projeto realizado para disciplina de Desenvolvimento Web Servidor
 > XAMPP
 
 ### Bugs
-> Ao buscar por processo não é possível carregar próximo prazo para o HTML
-> Não está carregando dados com <espaço> no HTML
-> Após o envio do formulário e exibição das mensagens de erro, o valor que estava no input some
+> Ao buscar por processo não é possível carregar próximo prazo para o HTML  
+> Não está carregando dados com <espaço> no HTML  
+> Após o envio do formulário e exibição das mensagens de erro, o valor que estava no input some  
 
 ### Contribuidores
 - **Eduardo Schiliga** -> View / Controller  
