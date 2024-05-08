@@ -1,6 +1,6 @@
 <?php
 
-    if(isset($_POST["entrar"])){
+    if(isset($_POST["entrar"])) {
         require('../../model/Usuario.php');
 
         $oab = $_POST['oab'] ?? '';

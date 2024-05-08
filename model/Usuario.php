@@ -1,57 +1,49 @@
 <?php
-    class Usuario{
+    class Usuario {
         private string $nome;
         private string $oab;
         private string $senha;
 
-        public function __construct($oab,$senha){
+        public function __construct($oab,$senha) {
             $this->oab = $oab;
             $this->senha = $senha;
         }
         
-        public function getNome(): string{
-            return $this->nome;
-        }
+        public function getNome(): string { return $this->nome; }
 
-        public function setNome($nome): void{
-            $this->nome = $nome;
-        }
+        public function setNome($nome): void { $this->nome = $nome; }
 
-        public function getOab(): string
-        {
-            return $this->oab;
-        }
+        public function getOab(): string { return $this->oab; }
 
-        public function setOab($oab): void{
-            $this->oab = $oab;
-        }
+        public function setOab($oab): void { $this->oab = $oab; }
 
-        public function setSenha($senha): void{
-            $this->senha = $senha;
-        }
+        public function setSenha($senha): void { $this->senha = $senha; }
 
-        public function buscarUsuario():bool{
-            if($this->oab == '123456789' && $this->senha == 'admin'){
-                $this->nome = 'Eduardo Schiliga';
-                $this->oab = '123456789';
-                return true;
+        public function buscarUsuario():bool {
+            require ('../../database/Conexao.php');
+
+            $select = "SELECT * FROM usuarios WHERE oab = '$this->oab'";
+
+            /** @var 'database/Conexao.php' $bd */
+            $result = mysqli_query($bd, $select);
+
+            if(mysqli_num_rows($result) > 0) {
+                $row = mysqli_fetch_array($result);
+
+                if($row['oab'] == $this->oab && $row['senha'] == $this->senha) {
+                    $this->nome = 'User';
+                    $this->oab = $row['oab'];
+                    return true;
+                }
             }
             return false;
         }
         
-        public function criarUsuario(){
-            //A fazer
-        }
+        public function criarUsuario() { }
 
-        public function atualizarUsuario(){
-            //A fazer
-        }
+        public function atualizarUsuario() { }
 
-        public function removerUsuario(){
-            //A fazer
-        }
+        public function removerUsuario() { }
 
-        public function listarTodos(){
-            //A fazer
-        }
+        public function listarTodos(){ }
     }
