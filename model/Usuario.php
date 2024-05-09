@@ -22,7 +22,7 @@
         public function buscarUsuario():bool {
             require ('../../database/Conexao.php');
 
-            $select = "SELECT * FROM usuarios WHERE oab = '$this->oab'";
+            $select = "SELECT * FROM usuario WHERE oab = '$this->oab'";
 
             /** @var 'database/Conexao.php' $bd */
             $result = mysqli_query($bd, $select);
@@ -31,15 +31,16 @@
                 $row = mysqli_fetch_array($result);
 
                 if($row['oab'] == $this->oab && $row['senha'] == $this->senha) {
-                    $this->nome = 'User';
+                    $this->nome = $row['nome'];
                     $this->oab = $row['oab'];
+                    $this->senha = $row['senha'];
                     return true;
                 }
             }
             return false;
         }
         
-        public function criarUsuario() { }
+        public function criarUsuario() {}
 
         public function atualizarUsuario() { }
 
