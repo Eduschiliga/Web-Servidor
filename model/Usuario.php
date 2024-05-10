@@ -1,5 +1,6 @@
 <?php
     class Usuario {
+        private int $id;
         private string $nome;
         private string $oab;
         private string $senha;
@@ -19,6 +20,8 @@
 
         public function setSenha($senha): void { $this->senha = $senha; }
 
+        public function getId(): int { return $this->id; }
+
         public function buscarUsuario():bool {
             require ('../../database/Conexao.php');
 
@@ -31,6 +34,7 @@
                 $row = mysqli_fetch_array($result);
 
                 if($row['oab'] == $this->oab && $row['senha'] == $this->senha) {
+                    $this->id = $row['idusuario'];
                     $this->nome = $row['nome'];
                     $this->oab = $row['oab'];
                     $this->senha = $row['senha'];

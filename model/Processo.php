@@ -1,5 +1,5 @@
 <?php
-    class Processo{
+    class Processo {
         private int $nmrProcesso;
         private string $cliente;
         private string $proximoPrazo;
@@ -14,7 +14,7 @@
             $this->proximoPrazo = '';
             $this->qtdHonorarios = 0;
             $this->nmrParcelas = 0;
-            $this->escritorio = false;
+            $this->escritorio = true;
             $this->descricao = '';
         }
 
@@ -74,31 +74,31 @@
             return $this->descricao;
         }
 
-        public function buscarProcesso(): void{
-            if($this->nmrProcesso == 123){
-                $this->cliente = 'Eduardo Schiliga';
-                $this->proximoPrazo = '20/05/2025';
-                $this->qtdHonorarios = 5;
-                $this->nmrParcelas = 6;
-                $this->escritorio = false;
-                $this->descricao = 'Processo contra o imposto';
+        public function buscarProcesso($usuario): void{
+            require ('../../database/Conexao.php');
+            $select = "SELECT * FROM processo WHERE idprocesso = '$this->nmrProcesso' and idusuario = '$usuario'";
+            /** @var 'database/Conexao.php' $bd */
+            $result = mysqli_query($bd, $select);
+
+            if(mysqli_num_rows($result) > 0) {
+                $row = mysqli_fetch_array($result);
+                $this->cliente = $row['cliente'];
+                $this->descricao = $row['descricao'];
+                $this->escritorio = $row['escritorio'];
             }
         }
         
-        public function criarProcesso(){
-            //A fazer
+        public function criarProcesso(int $usuario){
+            require ('../../database/Conexao.php');
+            $insert = "INSERT INTO processo(cliente, descricao,escritorio, idusuario) VALUES('$this->cliente', '$this->descricao', true, $usuario)"; // Verificar entrada de valor para escritorio
+
+            /** @var 'database/Conexao.php' $bd */
+            mysqli_query($bd, $insert);
         }
 
-        public function atualizarProcesso(){
-            //A fazer
-        }
+        public function atualizarProcesso() { }
 
-        public function removerProcesso(){
-            //A fazer
-        }
+        public function removerProcesso() { }
 
-        public function listarTodos(){
-            //A fazer
-        }
+        public function listarTodos() { }
     }
-?>

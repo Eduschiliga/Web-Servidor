@@ -2,6 +2,10 @@
     require_once('../../../model/Processo.php');
     $processo = unserialize($_SESSION['processo']);
     $erros = $_SESSION['erros'] ?? [];
+
+
+
+
 ?>
 <main class="container">
     <h1>Cadastrar / Editar</h1>
@@ -14,7 +18,8 @@
         </div>
     <?php endforeach;  unset($_SESSION['erros']); ?>
 
-    <form action="../../../controller/forms/valida.forms.controller.php?form=processos" class="container-form" method="post">
+    <!-- valida.forms.controller.php?form=processos -->
+    <form action="../../../controller/processo/processos.dados.controller.php" class="container-form" method="post">
         <label class="rotulo">
             Número do processo *
             <input placeholder="Informe o número do processo" type="text" name="nmr_processo" id="nmr_processo"  maxlength="16" class="input-dado" value=<?= $processo->getNmrProcesso(); ?> >
@@ -61,6 +66,6 @@
             </select>
         </label>
 
-        <input type="submit" value="Salvar" id="input_submit" class="button-enviar" name="form-processos">
+        <input type="submit" name="salvar" id="input_submit" class="button-enviar">
     </form>
 </main>

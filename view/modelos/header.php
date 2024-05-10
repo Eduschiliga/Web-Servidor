@@ -1,7 +1,7 @@
 <?php 
     session_start();
     require('../../../model/Usuario.php');
-    $usuario = unserialize($_SESSION['usuario']);    
+    $usuario = unserialize($_SESSION['usuario']);
 ?>
 
 <header>
