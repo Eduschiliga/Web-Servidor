@@ -44,8 +44,8 @@ if(!empty($_SESSION['logado'])) {
         require '../../model/Processo.php';
         require('../../model/Usuario.php');
         $usuario = unserialize($_SESSION['usuario']);
+        $processo = new Processo();
         if(!empty($_GET['nmrProcesso'])) {
-            $processo = new Processo();
             $processo->setNmrProcesso((int) $_GET['nmrProcesso']);
             $processo->buscarProcesso($usuario->getId());
             $_SESSION['processo'] = serialize($processo);
@@ -59,16 +59,12 @@ if(!empty($_SESSION['logado'])) {
                         header("Location: ../../view/pages/processos/form_processos_page.php");
                         exit();
                     }
-//                else {
-//                    $_SESSION['success_message'] = "Os dados foram enviados com sucesso!";
-//                    header("Location: ../../view/pages/processos/processos_page.php");
-//                    exit();
-//                }
                 }
 
 
                 $cliente = $_POST["nome_cliente"] ?? '';
                 $descricao = $_POST["descricao"] ?? '';
+                $nmr_processo = $_POST["nmr_processo"] ?? 0;
                 if($_POST["metade_escritorio"] == "Sim") {
                     $escritorio = true;
                 } else {
@@ -79,12 +75,12 @@ if(!empty($_SESSION['logado'])) {
                 $processo->setDescricao($descricao);
                 $processo->setCliente($cliente);
                 $processo->setEscritorio($escritorio);
+                $processo->setNmrProcesso($nmr_processo);
                 $processo->criarProcesso($usuario->getId());
+                $_SESSION['processo'] = serialize($processo);
             }
         }
         header('Location: ../../view/pages/processos/form_processos_page.php');
-//        header("Location: ../../view/pages/processos/processos_page.php");
-
     } else {
         header('Location: ../../index.php');
     }

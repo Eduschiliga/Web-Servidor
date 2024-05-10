@@ -3,7 +3,7 @@
     <section class="container-busca">
         <form method="get" action="../../../controller/processo/processos.dados.controller.php">
             <label class="barra-busca">
-                <input type="text" name="nmrProcesso" placeholder="Informe o número do processo..." class="input-processo">
+                <input type="text" maxlength="16" name="nmrProcesso" placeholder="Informe o número do processo..." class="input-processo">
                 <button type="submit"><img src="../../../images/icons/search_icon.png" alt="Ícone de busca"></button>
             </label>
         </form>
@@ -11,7 +11,7 @@
 
     <section class="container-button">
         <ul>
-            <li><a href="../../../controller/processo/processos.controller.php?acao=incluir" class="button-acao"><img src="../../../images/icons/incluir.png" alt="Icon Incluir">INCLUIR</a></li>
+            <li><a href="../../../controller/processo/processos.dados.controller.php?acao=incluir" class="button-acao"><img src="../../../images/icons/incluir.png" alt="Icon Incluir">INCLUIR</a></li>
         </ul>
     </section>
 

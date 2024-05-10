@@ -1,5 +1,6 @@
 <?php
     class Processo {
+        private int $idprocesso;
         private int $nmrProcesso;
         private string $cliente;
         private string $proximoPrazo;
@@ -76,12 +77,13 @@
 
         public function buscarProcesso($usuario): void{
             require ('../../database/Conexao.php');
-            $select = "SELECT * FROM processo WHERE idprocesso = '$this->nmrProcesso' and idusuario = '$usuario'";
+            $select = "SELECT * FROM processo WHERE numeroprocesso = '$this->nmrProcesso' and idusuario = '$usuario'";
             /** @var 'database/Conexao.php' $bd */
             $result = mysqli_query($bd, $select);
 
             if(mysqli_num_rows($result) > 0) {
                 $row = mysqli_fetch_array($result);
+                $this->idprocesso = $row['idprocesso'];
                 $this->cliente = $row['cliente'];
                 $this->descricao = $row['descricao'];
                 $this->escritorio = $row['escritorio'];
@@ -90,7 +92,7 @@
         
         public function criarProcesso(int $usuario){
             require ('../../database/Conexao.php');
-            $insert = "INSERT INTO processo(cliente, descricao,escritorio, idusuario) VALUES('$this->cliente', '$this->descricao', true, $usuario)"; // Verificar entrada de valor para escritorio
+            $insert = "INSERT INTO processo(numeroprocesso, cliente, descricao,escritorio, idusuario) VALUES('$this->nmrProcesso','$this->cliente', '$this->descricao', true, $usuario)"; // Verificar entrada de valor para escritorio
 
             /** @var 'database/Conexao.php' $bd */
             mysqli_query($bd, $insert);

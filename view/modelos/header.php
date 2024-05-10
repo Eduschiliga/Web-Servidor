@@ -21,9 +21,6 @@
                     <a href="../../../controller/processo/processos.controller.php" class="menu-item"><img src="../../../images/icons/processos.png" alt="Icon Processos">Processos</a>
                 </li>
                 <li>
-                    <a href="../../../controller/honorario/honorarios.controller.php" class="menu-item"><img src="../../../images/icons/honorarios.png" alt="Icon Honorários">Honorários</a>
-                </li>
-                <li>
                     <a href="../../../controller/usuario/usuario.controller.php" class="menu-item"><img src="../../../images/icons/user.png" alt="Icon User">Usuário</a>
                 </li>
             </ul>
