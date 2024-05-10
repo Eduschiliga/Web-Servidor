@@ -1,5 +1,6 @@
 <?php $erro = isset($_GET['erro']) ?>
 
+
 <section>
     <div class="login-container">
         <h1>Realize o seu Login</h1>
@@ -22,3 +23,4 @@
         </form>
     </div>
 </section>
+
