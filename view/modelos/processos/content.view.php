@@ -11,7 +11,7 @@
 
     <section class="container-button">
         <ul>
-            <li><a href="../../../controller/processo/processos.dados.controller.php" class="button-acao"><img src="../../../images/icons/incluir.png" alt="Icon Incluir">INCLUIR</a></li>
+            <li><a href="../../../controller/processo/processos.controller.php?acao=incluir" class="button-acao"><img src="../../../images/icons/incluir.png" alt="Icon Incluir">INCLUIR</a></li>
         </ul>
     </section>
 

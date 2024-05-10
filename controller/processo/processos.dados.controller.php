@@ -1,7 +1,6 @@
 <?php
 
-    session_start();
-
+session_start();
 /**
  * @return array
  */
@@ -41,6 +40,7 @@ function getErros(): array {
 }
 
 if(!empty($_SESSION['logado'])) {
+        $acao = isset($_GET['erro']);
         require '../../model/Processo.php';
         require('../../model/Usuario.php');
         $usuario = unserialize($_SESSION['usuario']);
@@ -51,18 +51,20 @@ if(!empty($_SESSION['logado'])) {
             $_SESSION['processo'] = serialize($processo);
         } else {
             if(isset($_POST["salvar"])) {
-                $erros = getErros();
+                if($acao != 'incluir') {
+                    $erros = getErros();
 
-                if (!empty($erros)) {
-                    $_SESSION['erros'] = $erros;
-                    header("Location: ../../view/pages/processos/form_processos_page.php");
-                    exit();
-                }
+                    if (!empty($erros)) {
+                        $_SESSION['erros'] = $erros;
+                        header("Location: ../../view/pages/processos/form_processos_page.php");
+                        exit();
+                    }
 //                else {
 //                    $_SESSION['success_message'] = "Os dados foram enviados com sucesso!";
 //                    header("Location: ../../view/pages/processos/processos_page.php");
 //                    exit();
 //                }
+                }
 
 
                 $cliente = $_POST["nome_cliente"] ?? '';
@@ -80,8 +82,8 @@ if(!empty($_SESSION['logado'])) {
                 $processo->criarProcesso($usuario->getId());
             }
         }
-//        header('Location: ../../view/pages/processos/form_processos_page.php');
-        header("Location: ../../view/pages/processos/processos_page.php");
+        header('Location: ../../view/pages/processos/form_processos_page.php');
+//        header("Location: ../../view/pages/processos/processos_page.php");
 
     } else {
         header('Location: ../../index.php');
