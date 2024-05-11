@@ -3,18 +3,12 @@
         private int $idprocesso;
         private int $nmrProcesso;
         private string $cliente;
-        private string $proximoPrazo;
-        private int $qtdHonorarios;
-        private int $nmrParcelas;
         private bool $escritorio;
         private string $descricao;
 
         public function __construct(){
             $this->nmrProcesso = 0;
             $this->cliente = '';
-            $this->proximoPrazo = '';
-            $this->qtdHonorarios = 0;
-            $this->nmrParcelas = 0;
             $this->escritorio = true;
             $this->descricao = '';
         }
@@ -75,9 +69,13 @@
             return $this->descricao;
         }
 
+        public function getIdProcesso(): int{
+            return $this->idprocesso;
+        }
+
         public function buscarProcesso($usuario): void{
             require ('../../database/Conexao.php');
-            $select = "SELECT * FROM processo WHERE numeroprocesso = '$this->nmrProcesso' and idusuario = '$usuario'";
+            $select = "SELECT * FROM processo WHERE numeroprocesso = '$this->nmrProcesso' AND idusuario = '$usuario'";
             /** @var 'database/Conexao.php' $bd */
             $result = mysqli_query($bd, $select);
 

@@ -1,18 +1,23 @@
 <?php
     require_once('../../../model/Processo.php');
+    require_once('../../../model/Honorario.php');
     if($_SESSION['processo'] == ''){
         $nmrProcesso = '';
         $cliente = '';
         $descricao = '';
         $proximoPrazo = '';
         $honorarios = 0;
+        $parcelas = 0;
     }else{
         $processo = unserialize($_SESSION['processo']);
+        $honoraio = unserialize($_SESSION['honorario']);
         $nmrProcesso = $processo->getNmrProcesso();
         $cliente = $processo->getCliente();
         $descricao = $processo->getDescricao();
+        $escritorio = $processo->getEscritorio();
         $proximoPrazo = '';
-        $honorarios = 0;
+        $honorarios = $honoraio->getHonorario();
+        $parcelas = $honoraio->getParcelas();
     }
     $erros = $_SESSION['erros'] ?? [];
 ?>
@@ -56,13 +61,13 @@
 
         <label class="rotulo">Selecione o número de parcelas
             <select id="nmr_parcelas" name="nmr_parcelas">
-                <option value="0">Selecione...</option>
-                <option value="1">1 parcela</option>
-                <option value="2">2 parcelas</option>
-                <option value="3">3 parcelas</option>
-                <option value="4">4 parcelas</option>
-                <option value="5">5 parcelas</option>
-                <option value="6">6 parcelas</option>
+                <option value="0" <?= ($parcelas == 0)?'selected':'' ?>>Selecione...</option>
+                <option value="1" <?= ($parcelas == 1)?'selected':'' ?>>1 parcela</option>
+                <option value="2" <?= ($parcelas == 2)?'selected':'' ?>>2 parcelas</option>
+                <option value="3" <?= ($parcelas == 3)?'selected':'' ?>>3 parcelas</option>
+                <option value="4" <?= ($parcelas == 4)?'selected':'' ?>>4 parcelas</option>
+                <option value="5" <?= ($parcelas == 5)?'selected':'' ?>>5 parcelas</option>
+                <option value="6" <?= ($parcelas == 6)?'selected':'' ?>>6 parcelas</option>
             </select>
         </label>
 
@@ -70,8 +75,8 @@
             Metade para o escritório
             <select id="metade_escritorio" name="metade_escritorio">
                 <option value="padrao">Selecione...</option>
-                <option value="sim">Sim</option>
-                <option value="nao">Não</option>
+                <option value="sim" <?= ($escritorio)?'selected':'' ?>>Sim</option>
+                <option value="nao" <?= (!$escritorio)?'selected':'' ?>>Não</option>
             </select>
         </label>
 

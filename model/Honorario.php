@@ -1,0 +1,60 @@
+<?php
+    class Honorario {
+        private int $idHonorario;
+        private float $honorario;
+        private int $parcelas;
+        private int $idProcesso;
+
+        public function __construct(){
+            $this->idHonorario = 0;
+            $this->honoraio = 0;
+            $this->parcelas = 0;
+            $this->idProcesso = 0;
+        }
+
+        public function getIdHonorario(): string {
+            return strval($this->honoraio);
+        }
+
+        public function setIdHonorario($idHonorario){
+            $this->idHonorario = $idHonorario;
+        }
+
+        public function getHonorario(): float{
+            return $this->honorario;
+        }
+
+        public function setHonorario($honoraio){
+            $this->honoraio = $honorario;
+        }
+
+        public function getParcelas(): int{
+            return $this->parcelas;
+        }
+
+        public function setParcelas($parcelas){
+            $this->parcelas = $parcelas;
+        }
+
+        public function getIdProcesso(): int{
+            return $this->idProcesso;
+        }
+
+        public function setIdProcesso($idProcesso){
+            $this->idProcesso = $idProcesso;
+        }
+
+        public function buscarHonorario($idProcesso): void{
+            require ('../../database/Conexao.php');
+            $select = "SELECT * FROM honorario WHERE idProcesso = '$idProcesso'";
+            /** @var 'database/Conexao.php' $bd */
+            $result = mysqli_query($bd, $select);
+
+            if(mysqli_num_rows($result) > 0) {
+                $row = mysqli_fetch_array($result);
+                $this->idHonorario = $row['idhonorario'];
+                $this->honorario = $row['honorario'];
+                $this->parcelas = $row['parcelas'];
+            }
+        }
+    }

@@ -43,12 +43,16 @@ if(!empty($_SESSION['logado'])) {
         $acao = isset($_GET['erro']);
         require '../../model/Processo.php';
         require('../../model/Usuario.php');
+        require('../../model/Honorario.php');
         $usuario = unserialize($_SESSION['usuario']);
         $_SESSION['processo'] = '';
         $processo = new Processo();
+        $honorario = new Honorario();
         if(!empty($_GET['nmrProcesso'])) {
             $processo->setNmrProcesso((int) $_GET['nmrProcesso']);
             $processo->buscarProcesso($usuario->getId());
+            $honorario->buscarHonorario($processo->getIdProcesso());
+            $_SESSION['honorario'] = serialize($honorario);
             $_SESSION['processo'] = serialize($processo);
         } else {
             if(isset($_POST["salvar"])) {
