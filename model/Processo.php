@@ -9,6 +9,7 @@
         private bool $escritorio;
         private string $descricao;
 
+
         public function __construct(){
             $this->nmrProcesso = 0;
             $this->cliente = '';
@@ -41,6 +42,16 @@
 
         public function setProximoPrazo($proximoPrazo): void{
             $this->proximoPrazo = $proximoPrazo;
+        }
+
+        public function getIdprocesso(): int
+        {
+            return $this->idprocesso;
+        }
+
+        public function setIdprocesso(int $idprocesso): void
+        {
+            $this->idprocesso = $idprocesso;
         }
 
         public function getQtdHonorarios(): int{
@@ -93,19 +104,40 @@
         public function criarProcesso(int $usuario){
             require ('../../database/Conexao.php');
             $insert = "INSERT INTO processo(numeroprocesso, cliente, descricao,escritorio, idusuario) VALUES('$this->nmrProcesso','$this->cliente', '$this->descricao', true, $usuario)"; // Verificar entrada de valor para escritorio
-
             /** @var 'database/Conexao.php' $bd */
             mysqli_query($bd, $insert);
         }
 
-        public function atualizarProcesso() {
+        public function atualizarProcesso(): void
+        {
             require ('../../database/Conexao.php');
-            $select = "UPDATE processo SET cliente = '$this->cliente', descricao = '$this->descricao', escritorio = true WHERE numeroprocesso = '$this->nmrProcesso'";
+            $sql = "UPDATE processo SET cliente = '$this->cliente', descricao = '$this->descricao', escritorio = true WHERE numeroprocesso = '$this->nmrProcesso'";
             /** @var 'database/Conexao.php' $bd */
-            mysqli_query($bd, $select);
+            mysqli_query($bd, $sql);
         }
 
         public function removerProcesso() { }
 
-        public function listarTodos() { }
+
+        public function listarTodos(): array {
+            require ('../../../database/Conexao.php');
+
+            $sql = "SELECT * FROM processo";
+            /** @var 'database/Conexao.php' $bd */
+            $result = mysqli_query($bd, $sql);
+            $processos = array();
+            if ($result) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $processo = new Processo();
+                    $processo->idprocesso = $row['idprocesso'];
+                    $processo->nmrProcesso = $row['numeroprocesso'];
+                    $processo->cliente = $row['cliente'];
+                    $processo->descricao = $row['descricao'];
+                    $processo->escritorio = $row['escritorio'];
+
+                    $processos[] = $processo;
+                }
+            }
+            return $processos;
+        }
     }

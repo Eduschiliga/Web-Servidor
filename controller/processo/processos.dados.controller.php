@@ -54,36 +54,24 @@ if(!empty($_SESSION['logado'])) {
             if(isset($_POST["salvar"])) {
                 if($acao != 'incluir') {
                     $erros = getErros();
-
                     if (!empty($erros)) {
                         $_SESSION['erros'] = $erros;
                         header("Location: ../../view/pages/processos/form_processos_page.php");
                         exit();
                     }
                 }
-
                 $processo->setNmrProcesso($_POST["nmr_processo"] ?? 0);
                 $processo->buscarProcesso($usuario->getId());
-                if($processo->getCliente() != ''){
-                    $cliente = $_POST["nome_cliente"] ?? '';
-                    $descricao = $_POST["descricao"] ?? '';
-                    if($_POST["metade_escritorio"] == "Sim") {
-                        $escritorio = true;
-                    } else {
-                        $escritorio = false;
-                    }
+                $cliente = $_POST["nome_cliente"] ?? '';
+                $descricao = $_POST["descricao"] ?? '';
+                $_POST["metade_escritorio"] == "Sim" ? $escritorio = true : $escritorio = false;
+                if($processo->getCliente() != '') {
                     $processo->setDescricao($descricao);
                     $processo->setCliente($cliente);
                     $processo->setEscritorio($escritorio);
                     $processo->atualizarProcesso();
-                }else{
-                    $cliente = $_POST["nome_cliente"] ?? '';
-                    $descricao = $_POST["descricao"] ?? '';
-                    if($_POST["metade_escritorio"] == "Sim") {
-                        $escritorio = true;
-                    } else {
-                        $escritorio = false;
-                    }
+                } else {
+
                     $processo->criarProcesso($usuario->getId());
                 }
                 $_SESSION['processo'] = serialize($processo);

@@ -1,3 +1,10 @@
+<?php
+    require '../../../model/Processo.php';
+    require ('../../../database/Conexao.php');
+    $processo = new Processo();
+    $processos = $processo->listarTodos();
+?>
+
 <main>
     <h1>Processos</h1>
     <section class="container-busca">
@@ -18,25 +25,27 @@
     <table>
         <thead>
         <tr>
-            <th>Número processo</th>
+            <th>Número do Processo</th>
             <th>Cliente</th>
-            <th>Próximo prazo</th>
-            <th colspan="2">Opções</th>
+            <th>Descrição</th>
+            <th>Escritório</th>
+            <!--<th>Próximo prazo</th>-->
+            <th colspan="3" style="text-align: center">Opções</th>
         </tr>
         </thead>
 
         <tbody>
-        <tr>
-            <td>987456</td>
-            <td>Eduardo Schiliga</td>
-            <td>16/04/2024</td>
-            <td>
-                <a href="../../../controller/processo/processos.dados.controller.php?acao=editar"><img src="../../../images/icons/edit_icon.png" alt="Ícone Editar"></a>
-            </td>
-            <td>
-                <a href="../../../controller/processo/processos.dados.controller.php?acao=visualizar"><img src="../../../images/icons/visibility_icon.png" alt="Ícone Visualizar"></a>
-            </td>
-        </tr>
+        <?php foreach ($processos as $processo): ?>
+            <tr>
+                <td><?php echo $processo->getNmrProcesso(); ?></td>
+                <td><?php echo $processo->getCliente(); ?></td>
+                <td><?php echo $processo->getDescricao(); ?></td>
+                <td><?php echo $processo->getEscritorio() ? 'Sim' : 'Não'; ?></td>
+                <td><a href="../../../controller/processo/processos.dados.controller.php?acao=editar&id=<?php echo $processo->getIdprocesso(); ?>"><img src="../../../images/icons/edit_icon.png" alt="Ícone Editar"></a></td>
+                <td><a href="../../../controller/processo/processos.dados.controller.php?acao=visualizar&id=<?php echo $processo->getIdprocesso(); ?>"><img src="../../../images/icons/visibility_icon.png" alt="Ícone Visualizar"></a></td>
+                <td><a href="../../../controller/processo/processos.dados.controller.php?acao=deletar&id=<?php echo $processo->getIdprocesso(); ?>"><img src="../../../images/icons/delete.png" alt="Ícone Visualizar"></a></td>
+            </tr>
+        <?php endforeach; ?>
         </tbody>
     </table>
 </main>
