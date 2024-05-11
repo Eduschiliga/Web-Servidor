@@ -19,8 +19,8 @@
             $this->descricao = '';
         }
 
-        public function getNmrProcesso(): int{
-            return $this->nmrProcesso;
+        public function getNmrProcesso(): string{
+            return strval($this->nmrProcesso);
         }
 
         public function setNmrProcesso($nmrProcesso): void{
@@ -98,7 +98,12 @@
             mysqli_query($bd, $insert);
         }
 
-        public function atualizarProcesso() { }
+        public function atualizarProcesso() {
+            require ('../../database/Conexao.php');
+            $select = "UPDATE processo SET cliente = '$this->cliente', descricao = '$this->descricao', escritorio = true WHERE numeroprocesso = '$this->nmrProcesso'";
+            /** @var 'database/Conexao.php' $bd */
+            mysqli_query($bd, $select);
+        }
 
         public function removerProcesso() { }
 

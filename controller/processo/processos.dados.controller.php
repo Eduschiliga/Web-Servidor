@@ -44,6 +44,7 @@ if(!empty($_SESSION['logado'])) {
         require '../../model/Processo.php';
         require('../../model/Usuario.php');
         $usuario = unserialize($_SESSION['usuario']);
+        $_SESSION['processo'] = '';
         $processo = new Processo();
         if(!empty($_GET['nmrProcesso'])) {
             $processo->setNmrProcesso((int) $_GET['nmrProcesso']);
@@ -61,22 +62,30 @@ if(!empty($_SESSION['logado'])) {
                     }
                 }
 
-
-                $cliente = $_POST["nome_cliente"] ?? '';
-                $descricao = $_POST["descricao"] ?? '';
-                $nmr_processo = $_POST["nmr_processo"] ?? 0;
-                if($_POST["metade_escritorio"] == "Sim") {
-                    $escritorio = true;
-                } else {
-                    $escritorio = false;
+                $processo->setNmrProcesso($_POST["nmr_processo"] ?? 0);
+                $processo->buscarProcesso($usuario->getId());
+                if($processo->getCliente() != ''){
+                    $cliente = $_POST["nome_cliente"] ?? '';
+                    $descricao = $_POST["descricao"] ?? '';
+                    if($_POST["metade_escritorio"] == "Sim") {
+                        $escritorio = true;
+                    } else {
+                        $escritorio = false;
+                    }
+                    $processo->setDescricao($descricao);
+                    $processo->setCliente($cliente);
+                    $processo->setEscritorio($escritorio);
+                    $processo->atualizarProcesso();
+                }else{
+                    $cliente = $_POST["nome_cliente"] ?? '';
+                    $descricao = $_POST["descricao"] ?? '';
+                    if($_POST["metade_escritorio"] == "Sim") {
+                        $escritorio = true;
+                    } else {
+                        $escritorio = false;
+                    }
+                    $processo->criarProcesso($usuario->getId());
                 }
-
-                $processo = new Processo();
-                $processo->setDescricao($descricao);
-                $processo->setCliente($cliente);
-                $processo->setEscritorio($escritorio);
-                $processo->setNmrProcesso($nmr_processo);
-                $processo->criarProcesso($usuario->getId());
                 $_SESSION['processo'] = serialize($processo);
             }
         }
