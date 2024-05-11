@@ -5,7 +5,7 @@ try {
     echo $ex->getMessage();
 }
 
-function listarUsuarios(): array {
+/*function listarUsuarios(): array {
     global $bd;
     $select = "SELECT * FROM usuario";
     $result = mysqli_query($bd, $select);
@@ -17,5 +17,5 @@ function listarUsuarios(): array {
         }
     }
     return $users;
-}
+}*/
 

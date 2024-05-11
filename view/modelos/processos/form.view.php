@@ -1,11 +1,20 @@
 <?php
     require_once('../../../model/Processo.php');
-    $processo = unserialize($_SESSION['processo']);
+    if($_SESSION['processo'] == ''){
+        $nmrProcesso = '';
+        $cliente = '';
+        $descricao = '';
+        $proximoPrazo = '';
+        $honorarios = 0;
+    }else{
+        $processo = unserialize($_SESSION['processo']);
+        $nmrProcesso = $processo->getNmrProcesso();
+        $cliente = $processo->getCliente();
+        $descricao = $processo->getDescricao();
+        $proximoPrazo = '';
+        $honorarios = 0;
+    }
     $erros = $_SESSION['erros'] ?? [];
-
-
-
-
 ?>
 <main class="container">
     <h1>Cadastrar / Editar</h1>
@@ -22,27 +31,27 @@
     <form action="../../../controller/processo/processos.dados.controller.php" class="container-form" method="post">
         <label class="rotulo">
             Número do processo *
-            <input placeholder="Informe o número do processo" type="text" name="nmr_processo" id="nmr_processo"  maxlength="16" class="input-dado" value=<?= $processo->getNmrProcesso(); ?> >
+            <input placeholder="Informe o número do processo" type="text" name="nmr_processo" id="nmr_processo"  maxlength="16" class="input-dado" value=<?= $nmrProcesso; ?> >
         </label>
 
         <label class="rotulo">
             Nome Cliente *
-            <input placeholder="Informe o nome do cliente" type="text" name="nome_cliente" id="nome_cliente" class="input-dado" value=<?= $processo->getCliente(); ?> >
+            <input placeholder="Informe o nome do cliente" type="text" name="nome_cliente" id="nome_cliente" class="input-dado" value=<?= $cliente; ?> >
         </label>
 
         <label class="rotulo">
             Descrição
-            <input placeholder="Informe a descrição" type="text" name="descricao" id="descricao" class="input-dado" value=<?= $processo->getDescricao(); ?> >
+            <input placeholder="Informe a descrição" type="text" name="descricao" id="descricao" class="input-dado" value=<?= $descricao; ?> >
         </label>
 
         <label class="rotulo">
             Próximo prazo *
-            <input type="date" name="data_proximo_prazo" id="data_proximo_prazo" class="input-dado" value=<?= $processo->getProximoPrazo(); ?>>
+            <input type="date" name="data_proximo_prazo" id="data_proximo_prazo" class="input-dado" value=<?= $proximoPrazo; ?>>
         </label>
 
         <label class="rotulo">
             Honorários:
-            <input type="number" id="qtd_honorarios" name="qtd_honorarios" min="0" step="0.01" placeholder="R$0.00" class="input-dado" value=<?= $processo->getQtdHonorarios(); ?>>
+            <input type="number" id="qtd_honorarios" name="qtd_honorarios" min="0" step="0.01" placeholder="R$0.00" class="input-dado" value=<?= $honorarios; ?>>
         </label>
 
         <label class="rotulo">Selecione o número de parcelas
