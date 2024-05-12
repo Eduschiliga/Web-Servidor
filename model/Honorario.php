@@ -7,13 +7,13 @@
 
         public function __construct(){
             $this->idHonorario = 0;
-            $this->honoraio = 0;
+            $this->honorario = 0;
             $this->parcelas = 0;
             $this->idProcesso = 0;
         }
 
         public function getIdHonorario(): string {
-            return strval($this->honoraio);
+            return strval($this->honorario);
         }
 
         public function setIdHonorario($idHonorario){
@@ -24,8 +24,8 @@
             return $this->honorario;
         }
 
-        public function setHonorario($honoraio){
-            $this->honoraio = $honorario;
+        public function setHonorario($honorario){
+            $this->honorario = $honorario;
         }
 
         public function getParcelas(): int{

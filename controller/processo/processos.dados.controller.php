@@ -53,6 +53,11 @@
             $_SESSION['honorario'] = serialize($honorario);
             $_SESSION['processo'] = serialize($processo);
         } else {
+            if($_GET['acao'] == 'deletar'){
+                $processo->removerProcesso($_GET['nmrProcesso']);
+                echo 'teste';
+                //header('Location ../../view/pages/processos/processos_page.php');
+            }
             if(isset($_POST["salvar"])) {
                 if($acao != 'incluir') {
                     $erros = getErros();
@@ -76,9 +81,6 @@
                     $processo->criarProcesso($usuario->getId());
                 }
                 $_SESSION['processo'] = serialize($processo);
-            }
-            if($_GET['acao'] == 'deletar'){
-                $processo->removerProcesso($_GET['nmrProcesso']);
             }
         }
         header('Location: ../../view/pages/processos/form_processos_page.php');
