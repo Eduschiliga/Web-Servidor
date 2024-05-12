@@ -38,7 +38,7 @@
             $this->proximoPrazo = $proximoPrazo;
         }
 
-        public function getIdprocesso(): int
+        public function getIdProcesso(): int
         {
             return $this->idprocesso;
         }
@@ -80,10 +80,6 @@
             return $this->descricao;
         }
 
-        public function getIdProcesso(): int{
-            return $this->idprocesso;
-        }
-
         public function buscarProcesso($usuario): void{
             require ('../../database/Conexao.php');
             $select = "SELECT * FROM processo WHERE numeroprocesso = '$this->nmrProcesso' AND idusuario = '$usuario'";
@@ -117,14 +113,15 @@
         public function removerProcesso() { }
 
 
-        public function listarTodos(): array {
+        public function listarTodos($usuario): array {
             require ('../../../database/Conexao.php');
 
-            $sql = "SELECT * FROM processo";
+            $sql = "SELECT * FROM processo WHERE idusuario = '$usuario'";
             /** @var 'database/Conexao.php' $bd */
             $result = mysqli_query($bd, $sql);
             $processos = array();
             if ($result) {
+                $counter = 0;
                 while ($row = mysqli_fetch_assoc($result)) {
                     $processo = new Processo();
                     $processo->idprocesso = $row['idprocesso'];
@@ -133,7 +130,8 @@
                     $processo->descricao = $row['descricao'];
                     $processo->escritorio = $row['escritorio'];
 
-                    $processos[] = $processo;
+                    $processos[$counter] = $processo;
+                    $counter += 1;
                 }
             }
             return $processos;

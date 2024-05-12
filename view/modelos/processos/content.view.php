@@ -1,8 +1,10 @@
 <?php
-    require '../../../model/Processo.php';
+    //require ('../../../model/Usuario.php');
+    require ('../../../model/Processo.php');
     require ('../../../database/Conexao.php');
     $processo = new Processo();
-    $processos = $processo->listarTodos();
+    $usuario = unserialize($_SESSION['usuario']);
+    $processos = $processo->listarTodos($usuario->getId());
 ?>
 
 <main>
@@ -41,9 +43,9 @@
                 <td><?php echo $processo->getCliente(); ?></td>
                 <td><?php echo $processo->getDescricao(); ?></td>
                 <td><?php echo $processo->getEscritorio() ? 'Sim' : 'Não'; ?></td>
-                <td><a href="../../../controller/processo/processos.dados.controller.php?acao=editar&id=<?php echo $processo->getIdprocesso(); ?>"><img src="../../../images/icons/edit_icon.png" alt="Ícone Editar"></a></td>
-                <td><a href="../../../controller/processo/processos.dados.controller.php?acao=visualizar&id=<?php echo $processo->getIdprocesso(); ?>"><img src="../../../images/icons/visibility_icon.png" alt="Ícone Visualizar"></a></td>
-                <td><a href="../../../controller/processo/processos.dados.controller.php?acao=deletar&id=<?php echo $processo->getIdprocesso(); ?>"><img src="../../../images/icons/delete.png" alt="Ícone Visualizar"></a></td>
+                <td><a href="../../../controller/processo/processos.dados.controller.php?acao=editar&id=<?php echo $processo->getIdProcesso(); ?>"><img src="../../../images/icons/edit_icon.png" alt="Ícone Editar"></a></td>
+                <td><a href="../../../controller/processo/processos.dados.controller.php?acao=visualizar&id=<?php echo $processo->getIdProcesso(); ?>"><img src="../../../images/icons/visibility_icon.png" alt="Ícone Visualizar"></a></td>
+                <td><a href="../../../controller/processo/processos.dados.controller.php?acao=deletar&id=<?php echo $processo->getIdProcesso(); ?>"><img src="../../../images/icons/delete.png" alt="Ícone Visualizar"></a></td>
             </tr>
         <?php endforeach; ?>
         </tbody>
