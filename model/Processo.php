@@ -38,13 +38,11 @@
             $this->proximoPrazo = $proximoPrazo;
         }
 
-        public function getIdProcesso(): int
-        {
+        public function getIdProcesso(): int{
             return $this->idprocesso;
         }
 
-        public function setIdprocesso(int $idprocesso): void
-        {
+        public function setIdprocesso(int $idprocesso): void{
             $this->idprocesso = $idprocesso;
         }
 
@@ -102,15 +100,19 @@
             mysqli_query($bd, $insert);
         }
 
-        public function atualizarProcesso(): void
-        {
+        public function atualizarProcesso(): void{
             require ('../../database/Conexao.php');
             $sql = "UPDATE processo SET cliente = '$this->cliente', descricao = '$this->descricao', escritorio = true WHERE numeroprocesso = '$this->nmrProcesso'";
             /** @var 'database/Conexao.php' $bd */
             mysqli_query($bd, $sql);
         }
 
-        public function removerProcesso() { }
+        public function removerProcesso($nmrProcesso) {
+            require ('../../database/Conexao.php');
+            $sql = "DELETE FROM processo WHERE numeroprocesso = $nmrProcesso";
+            /** @var 'database/Conexao.php' $bd */
+            mysqli_query($bd, $sql);
+        }
 
 
         public function listarTodos($usuario): array {

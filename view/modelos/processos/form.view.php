@@ -1,6 +1,6 @@
 <?php
-    require_once('../../../model/Processo.php');
-    require_once('../../../model/Honorario.php');
+    require('../../../model/Processo.php');
+    require('../../../model/Honorario.php');
     if($_SESSION['processo'] == ''){
         $nmrProcesso = '';
         $cliente = '';
