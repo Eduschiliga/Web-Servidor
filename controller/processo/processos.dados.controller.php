@@ -46,7 +46,7 @@
         $_SESSION['processo'] = '';
         $processo = new Processo();
         $honorario = new Honorario();
-        if(!empty($_GET['nmrProcesso']) || $_GET['acao'] == 'visualizar' || $_GET['acao'] == 'editar') {
+        if(!empty($_GET['nmrProcesso']) && ($_GET['acao'] == 'visualizar' || $_GET['acao'] == 'editar')) {
             $processo->setNmrProcesso((int) $_GET['nmrProcesso']);
             $processo->buscarProcesso($usuario->getId());
             $honorario->buscarHonorario($processo->getIdProcesso());
@@ -56,7 +56,7 @@
             if($_GET['acao'] == 'deletar'){
                 $processo->removerProcesso($_GET['nmrProcesso']);
                 echo 'teste';
-                //header('Location ../../view/pages/processos/processos_page.php');
+                header('Location ../../view/pages/processos/processos_page.php');
             }
             if(isset($_POST["salvar"])) {
                 if($acao != 'incluir') {
