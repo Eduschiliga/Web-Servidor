@@ -36,6 +36,17 @@
         </div>
     <?php endif; ?>
 
+    <?php if (isset($_GET['create']) && $_GET['create']): ?>
+        <div id="createModal">
+            <div class="modal-content bg-confirm">
+                <h2>Processo Cadastrado com Sucesso!</h2>
+                <p>O processo <span id="numero_processo_create"></span> foi cadastrado com sucesso!</p>
+                <button onclick="document.getElementById('createModal').style.display='none'" class="cancel-button" style="background-color: #2BD968">Ok</button>
+            </div>
+            <div class="modal-background"></div>
+        </div>
+    <?php endif; ?>
+
     <table>
         <thead>
         <tr>

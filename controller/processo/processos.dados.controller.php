@@ -81,9 +81,11 @@
                     $processo->criarProcesso($usuario->getId());
                 }
                 $_SESSION['processo'] = serialize($processo);
+                header("Location: ../../view/pages/processos/processos_page.php?create=true&nmrProcesso=" . $processo->getNmrProcesso());
+                exit();
             }
         }
-        header('Location: ../../view/pages/processos/form_processos_page.php?acao=' . $_GET['acao']);
+        header("Location: ../../view/pages/processos/form_processos_page.php?acao=" . $_GET['acao']);
     } else {
         header('Location: ../../index.php');
     }

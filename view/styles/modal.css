@@ -1,4 +1,4 @@
-#deleteModal, #confirmModal {
+#deleteModal, #confirmModal, #createModal {
     display: none;
     position: fixed;
     top: 0;
@@ -21,7 +21,7 @@
     z-index: -1; /* Mantém o background atrás do conteúdo do modal */
 }
 
-#deleteModal .modal-content, #confirmModal .modal-content {
+#deleteModal .modal-content, #confirmModal .modal-content, #createModal .modal-content {
     position: absolute; /* Posição absoluta para se ajustar corretamente */
     top: 50%;
     left: 50%;
@@ -33,7 +33,7 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border: 1px solid #ebebeb;
-    z-index: 2; /* Assegura que o conteúdo esteja acima do background */
+    z-index: 100000; /* Assegura que o conteúdo esteja acima do background */
 }
 
 
@@ -43,6 +43,10 @@
 }
 
 #confirmModal h2, #confirmModal p{
+    margin-bottom: 20px;
+}
+
+#createModal h2, #createModal p {
     margin-bottom: 20px;
 }
 
