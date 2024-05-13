@@ -4,12 +4,12 @@
     <form action="#" class="container-form">
         <label for="nome_user" class="rotulo">
             Nome de usuário
-            <input type="text" class="input-dado" name="nome_user" id="nome_user" value=<?= $usuario->getNome() ?>>
+            <input type="text" class="input-dado" name="nome_user" id="nome_user" value="<?= htmlspecialchars($usuario->getNome(), ENT_QUOTES, 'UTF-8'); ?>">
         </label>
 
         <label for="oab_user" class="rotulo">
             OAB
-            <input type="text" class="input-dado" name="oab_user" id="oab_user" value=<?= $usuario->getOab() ?>>
+            <input type="text" class="input-dado" name="oab_user" id="oab_user" value="<?= htmlspecialchars($usuario->getOab(), ENT_QUOTES, 'UTF-8'); ?>" disabled>
         </label>
     </form>
 
