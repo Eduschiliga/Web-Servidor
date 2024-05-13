@@ -40,9 +40,9 @@ $rotulo = ucfirst($acao);
     <?php endforeach;  unset($_SESSION['erros']); ?>
 
     <form action="../../../controller/processo/processos.dados.controller.php" class="container-form" method="post">
-        <label class="rotulo">
+        <label class="rotulo" style="<?= $acao == 'editar' ? 'display: none' : '' ?>">
             Número do processo *
-            <input placeholder="Informe o número do processo" type="text" name="nmr_processo" id="nmr_processo"  maxlength="16" class="input-dado" value="<?= htmlspecialchars($nmrProcesso, ENT_QUOTES, 'UTF-8'); ?>" <?= $acao == 'visualizar' || 'editar' ? 'disabled' : ''; ?>>
+            <input placeholder="Informe o número do processo" type="text" name="nmr_processo" id="nmr_processo"  maxlength="16" class="input-dado" value="<?= htmlspecialchars($nmrProcesso, ENT_QUOTES, 'UTF-8'); ?>" <?= $acao == 'visualizar' ? 'disabled' : ''; ?> style="<?= $acao == 'editar' ? 'display: none' : '' ?>" >
         </label>
 
         <label class="rotulo">
