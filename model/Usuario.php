@@ -22,6 +22,10 @@
 
         public function getId(): int { return $this->id; }
 
+        public function getSenha(): String{
+            return $this->senha;
+        }
+
         public function buscarUsuario():bool {
             require ('../../database/Conexao.php');
 
@@ -43,12 +47,11 @@
             }
             return false;
         }
-        
-        public function criarUsuario() {}
 
-        public function atualizarUsuario() { }
-
-        public function removerUsuario() { }
-
-        public function listarTodos(){ }
+        public function atualizarUsuario() { 
+            require ('../../database/Conexao.php');
+            $sql = "UPDATE usuario SET senha = '$this->senha', nome = '$this->nome' WHERE idusuario = '$this->id'";
+            /** @var 'database/Conexao.php' $bd */
+            mysqli_query($bd, $sql);
+        }
     }
