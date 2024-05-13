@@ -2,7 +2,7 @@ function showDeleteModal(nmrProcesso) {
     document.getElementById('deleteModal').style.display = 'block';
     document.getElementById('numero_processo').innerHTML = `Número do processo: <strong>${nmrProcesso}</strong>`;
     document.getElementById('confirmDelete').onclick = function() {
-        window.location.href = '../../../controller/processo/processos.dados.controller.php?acao=deletar&nmrProcesso=' + nmrProcesso;
+        window.location.href = '../controller/processo/processos.dados.controller.php?acao=deletar&nmrProcesso=' + nmrProcesso;
     };
 }
 

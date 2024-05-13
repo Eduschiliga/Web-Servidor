@@ -10,7 +10,7 @@
         $_SESSION['processo'] = '';
         $processo = new Processo();
         $honorario = new Honorario();
-        if(!empty($_GET['nmrProcesso']) && ($_GET['acao'] == 'visualizar' || $_GET['acao'] == 'editar')) {
+        if(!empty($_GET['nmrProcesso']) && ($_GET['acao'] == 'visualizar' || $_GET['acao'] == 'editar') || isset($_GET["pesquisar"])) {
             $processo->setNmrProcesso((int) $_GET['nmrProcesso']);
             $processo->buscarProcesso($usuario->getId());
             $honorario->buscarHonorario($processo->getIdProcesso());
@@ -23,7 +23,7 @@
                     $erros = Validacao::getErros();
                     if (!empty($erros)) {
                         $_SESSION['erros'] = $erros;
-                        header("Location: ../../view/pages/processos/form_processos_page.php");
+                        header("Location: ../../processos/form_processos.php");
                         exit();
                     }
                 }
@@ -55,16 +55,16 @@
                     $honorario->criarHonorario($processo->getIdProcesso());
                 }
                 $_SESSION['processo'] = serialize($processo);
-                header("Location: ../../view/pages/processos/processos_page.php?create=true&nmrProcesso=" . $processo->getNmrProcesso());
+                header("Location: ../../processos/index.php?create=true&nmrProcesso=" . $processo->getNmrProcesso());
                 exit();
             }
             if($_GET['acao'] == 'deletar'){
                 $processo->removerProcesso($_GET['nmrProcesso']);
-                header('Location: ../../view/pages/processos/processos_page.php?deleted=true&nmrProcesso=' . $_GET['nmrProcesso']);
+                header('Location: ../../processos/index.php?deleted=true&nmrProcesso=' . $_GET['nmrProcesso']);
                 exit();
             }
         }
-        header("Location: ../../view/pages/processos/form_processos_page.php?acao=" . $_GET['acao']);
+        header("Location: ../../processos/form_processos.php?acao=" . $_GET['acao']);
     } else {
         header('Location: ../../index.php');
     }

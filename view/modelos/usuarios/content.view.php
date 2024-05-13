@@ -1,7 +1,7 @@
 <main>
     <h1>Perfil do Usuário</h1>
 
-    <form action="../../../controller/usuario/usuario.dados.controller.php" class="container-form" method="post">
+    <form action="../controller/usuario/usuario.dados.controller.php" class="container-form" method="post">
         <label for="nome_user" class="rotulo">
             Nome de usuário
             <input type="text" class="input-dado" name="nome_user" id="nome_user" value="<?= htmlspecialchars($usuario->getNome(), ENT_QUOTES, 'UTF-8'); ?>">
