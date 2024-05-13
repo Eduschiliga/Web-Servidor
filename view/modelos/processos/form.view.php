@@ -1,28 +1,35 @@
 <?php
-    require('../../../model/Processo.php');
-    require('../../../model/Honorario.php');
-    if($_SESSION['processo'] == ''){
-        $nmrProcesso = '';
-        $cliente = '';
-        $descricao = '';
-        $proximoPrazo = '';
-        $honorarios = 0;
-        $parcelas = 0;
-    }else{
-        $processo = unserialize($_SESSION['processo']);
-        $honoraio = unserialize($_SESSION['honorario']);
-        $nmrProcesso = $processo->getNmrProcesso();
-        $cliente = $processo->getCliente();
-        $descricao = $processo->getDescricao();
-        $escritorio = $processo->getEscritorio();
-        $proximoPrazo = '';
-        $honorarios = $honoraio->getHonorario();
-        $parcelas = $honoraio->getParcelas();
-    }
-    $erros = $_SESSION['erros'] ?? [];
+
+
+require('../../../model/Processo.php');
+require('../../../model/Honorario.php');
+
+if($_SESSION['processo'] == '') {
+    $nmrProcesso = '';
+    $cliente = '';
+    $descricao = '';
+    $proximoPrazo = '';
+    $honorarios = 0;
+    $parcelas = 0;
+} else {
+    $processo = unserialize($_SESSION['processo']);
+    $honoraio = unserialize($_SESSION['honorario']);
+    $nmrProcesso = $processo->getNmrProcesso();
+    $cliente = $processo->getCliente();
+    $descricao = $processo->getDescricao();
+    $escritorio = $processo->getEscritorio();
+    $proximoPrazo = '';
+    $honorarios = $honoraio->getHonorario();
+    $parcelas = $honoraio->getParcelas();
+}
+$erros = $_SESSION['erros'] ?? [];
+
+
+$acao = $_GET['acao'] ?? '';
+$rotulo = ucfirst($acao);
 ?>
 <main class="container">
-    <h1>Cadastrar / Editar</h1>
+    <h1><?= $rotulo; ?> Processo</h1>
     <a href="../../../controller/processo/processos.controller.php" id="btn_voltar" class="button-acao"><img src="../../../images/icons/voltar.png" alt="Icon Voltar">Voltar</a>
 
     <!-- Exibe mensagens de erro -->
@@ -36,31 +43,31 @@
     <form action="../../../controller/processo/processos.dados.controller.php" class="container-form" method="post">
         <label class="rotulo">
             Número do processo *
-            <input placeholder="Informe o número do processo" type="text" name="nmr_processo" id="nmr_processo"  maxlength="16" class="input-dado" value=<?= $nmrProcesso; ?> >
+            <input placeholder="Informe o número do processo" type="text" name="nmr_processo" id="nmr_processo"  maxlength="16" class="input-dado" value=<?= $nmrProcesso; ?> <?php if ($acao == 'visualizar'): ?> disabled <?php endif; ?> >
         </label>
 
         <label class="rotulo">
             Nome Cliente *
-            <input placeholder="Informe o nome do cliente" type="text" name="nome_cliente" id="nome_cliente" class="input-dado" value=<?= $cliente; ?> >
+            <input placeholder="Informe o nome do cliente" type="text" name="nome_cliente" id="nome_cliente" class="input-dado" value=<?= $cliente; ?> <?php if ($acao == 'visualizar'): ?> disabled <?php endif; ?>>
         </label>
 
         <label class="rotulo">
             Descrição
-            <input placeholder="Informe a descrição" type="text" name="descricao" id="descricao" class="input-dado" value=<?= $descricao; ?> >
+            <input placeholder="Informe a descrição" type="text" name="descricao" id="descricao" class="input-dado" value=<?= $descricao; ?> <?php if ($acao == 'visualizar'): ?> disabled <?php endif; ?>>
         </label>
 
         <label class="rotulo">
             Próximo prazo *
-            <input type="date" name="data_proximo_prazo" id="data_proximo_prazo" class="input-dado" value=<?= $proximoPrazo; ?>>
+            <input type="date" name="data_proximo_prazo" id="data_proximo_prazo" class="input-dado" value=<?= $proximoPrazo; ?> <?php if ($acao == 'visualizar'): ?> disabled <?php endif; ?> <?php if ($acao == 'visualizar'): ?> disabled <?php endif; ?>>
         </label>
 
         <label class="rotulo">
             Honorários:
-            <input type="number" id="qtd_honorarios" name="qtd_honorarios" min="0" step="0.01" placeholder="R$0.00" class="input-dado" value=<?= $honorarios; ?>>
+            <input type="number" id="qtd_honorarios" name="qtd_honorarios" min="0" step="0.01" placeholder="R$0.00" class="input-dado" value=<?= $honorarios; ?> <?php if ($acao == 'visualizar'): ?> disabled <?php endif; ?>>
         </label>
 
         <label class="rotulo">Selecione o número de parcelas
-            <select id="nmr_parcelas" name="nmr_parcelas">
+            <select id="nmr_parcelas" name="nmr_parcelas" <?php if ($acao == 'visualizar'): ?> disabled <?php endif; ?>>
                 <option value="0" <?= ($parcelas == 0)?'selected':'' ?>>Selecione...</option>
                 <option value="1" <?= ($parcelas == 1)?'selected':'' ?>>1 parcela</option>
                 <option value="2" <?= ($parcelas == 2)?'selected':'' ?>>2 parcelas</option>
@@ -73,13 +80,13 @@
 
         <label class="rotulo">
             Metade para o escritório
-            <select id="metade_escritorio" name="metade_escritorio">
+            <select id="metade_escritorio" name="metade_escritorio" <?php if ($acao == 'visualizar'): ?> disabled <?php endif; ?>>
                 <option value="padrao">Selecione...</option>
                 <option value="sim" <?= ($escritorio)?'selected':'' ?>>Sim</option>
                 <option value="nao" <?= (!$escritorio)?'selected':'' ?>>Não</option>
             </select>
         </label>
 
-        <input type="submit" name="salvar" id="input_submit" class="button-enviar">
+        <input type="submit" name="salvar" id="input_submit" class="button-enviar"  <?php if ($acao == 'visualizar'): ?> style="display: none;" <?php endif; ?>>
     </form>
 </main>

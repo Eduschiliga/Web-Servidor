@@ -9,6 +9,7 @@
 
         public function __construct(){
             $this->nmrProcesso = 0;
+            $this->idprocesso = 0;
             $this->cliente = '';
             $this->escritorio = true;
             $this->descricao = '';

@@ -14,8 +14,8 @@
         <link rel="icon" type="image/x-icon" href="../../../images/icons/favicon.ico">
     </head>
     <body>
-        <?php require_once('../../modelos/header.php') ?>
-        <?php require_once('../../modelos/processos/form.view.php') ?>
-        <?php require_once('../../modelos/footer.php') ?>
+        <?php require('../../modelos/header.php') ?>
+        <?php require('../../modelos/processos/form.view.php') ?>
+        <?php require('../../modelos/footer.php') ?>
     </body>
 </html>

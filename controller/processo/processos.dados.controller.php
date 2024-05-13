@@ -56,7 +56,8 @@
             if($_GET['acao'] == 'deletar'){
                 $processo->removerProcesso($_GET['nmrProcesso']);
                 echo 'teste';
-                header('Location ../../view/pages/processos/processos_page.php');
+                header('Location: ../../view/pages/processos/processos_page.php');
+                exit();
             }
             if(isset($_POST["salvar"])) {
                 if($acao != 'incluir') {
@@ -83,8 +84,8 @@
                 $_SESSION['processo'] = serialize($processo);
             }
         }
-        header('Location: ../../view/pages/processos/form_processos_page.php');
+        header('Location: ../../view/pages/processos/form_processos_page.php?acao=' . $_GET['acao']);
     } else {
         header('Location: ../../index.php');
     }
-?>
+    exit();

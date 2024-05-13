@@ -45,9 +45,30 @@
                 <td><?php echo $processo->getEscritorio() ? 'Sim' : 'Não'; ?></td>
                 <td><a href="../../../controller/processo/processos.dados.controller.php?acao=editar&nmrProcesso=<?php echo $processo->getNmrProcesso(); ?>"><img src="../../../images/icons/edit_icon.png" alt="Ícone Editar"></a></td>
                 <td><a href="../../../controller/processo/processos.dados.controller.php?acao=visualizar&nmrProcesso=<?php echo $processo->getNmrProcesso(); ?>"><img src="../../../images/icons/visibility_icon.png" alt="Ícone Visualizar"></a></td>
-                <td><a href="../../../controller/processo/processos.dados.controller.php?acao=deletar&nmrProcesso=<?php echo $processo->getNmrProcesso(); ?>"><img src="../../../images/icons/delete.png" alt="Ícone Visualizar"></a></td>
+                <td><a href="#" onclick="showDeleteModal('<?= $processo->getNmrProcesso(); ?>');"><img src="../../../images/icons/delete.png" alt="Ícone Excluir"></a></td>
             </tr>
         <?php endforeach; ?>
         </tbody>
     </table>
+
+    <!-- Modal de Confirmação -->
+    <div id="deleteModal">
+        <div class="modal-content">
+            <h2>Confirmação de Exclusão</h2>
+            <p>Tem certeza que deseja excluir este processo?</p>
+            <button id="confirmDelete">Confirmar</button>
+            <button onclick="document.getElementById('deleteModal').style.display='none'" class="cancel-button">Cancelar</button>
+        </div>
+        <div class="modal-background"></div>
+    </div>
+
+    <script>
+        function showDeleteModal(nmrProcesso) {
+            document.getElementById('deleteModal').style.display = 'block';
+            document.getElementById('confirmDelete').onclick = function() {
+                window.location.href = '../../../controller/processo/processos.dados.controller.php?acao=deletar&nmrProcesso=' + nmrProcesso;
+            };
+        }
+    </script>
 </main>
+
