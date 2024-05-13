@@ -96,7 +96,8 @@
             }
         }
         
-        public function criarProcesso(int $usuario){
+        public function criarProcesso(int $usuario): void
+        {
             require ('../../database/Conexao.php');
             if($this->escritorio){
                 $insert = "INSERT INTO processo(numeroprocesso, cliente, descricao, escritorio, proximoprazo, idusuario) VALUES('$this->nmrProcesso','$this->cliente', '$this->descricao', true, '$this->proximoPrazo', $usuario)";

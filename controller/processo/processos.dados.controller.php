@@ -55,8 +55,15 @@
                     $honorario->criarHonorario($processo->getIdProcesso());
                 }
                 $_SESSION['processo'] = serialize($processo);
+
+                if ($_GET['acao'] == 'editar') {
+                    header("Location: ../../view/pages/processos/processos_page.php?editar=true&nmrProcesso=" . $processo->getNmrProcesso());
+                    exit();
+                }
+
                 header("Location: ../../view/pages/processos/processos_page.php?create=true&nmrProcesso=" . $processo->getNmrProcesso());
                 exit();
+
             }
             if($_GET['acao'] == 'deletar'){
                 $processo->removerProcesso($_GET['nmrProcesso']);

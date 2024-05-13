@@ -58,7 +58,8 @@
             }
         }
 
-        public function criarHonorario(int $idProcesso){
+        public function criarHonorario(int $idProcesso): void
+        {
             require ('../../database/Conexao.php');
             $sql = "INSERT INTO honorario(honorario,parcelas,idprocesso) VALUES ('$this->honorario','$this->parcelas',$idProcesso)";
             /** @var 'database/Conexao.php' $bd */

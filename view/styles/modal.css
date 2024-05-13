@@ -1,4 +1,4 @@
-#deleteModal, #confirmModal, #createModal {
+#deleteModal, #confirmModal, #createModal, #editModal {
     display: none;
     position: fixed;
     top: 0;
@@ -21,7 +21,7 @@
     z-index: -1;
 }
 
-#deleteModal .modal-content, #confirmModal .modal-content, #createModal .modal-content {
+#deleteModal .modal-content, #confirmModal .modal-content, #createModal .modal-content, #editModal .modal-content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -45,6 +45,10 @@
 }
 
 #createModal h2, #createModal p {
+    margin-bottom: 20px;
+}
+
+#editModal h2, #editModal p {
     margin-bottom: 20px;
 }
 
