@@ -11,6 +11,7 @@ if($_SESSION['processo'] == '') {
     $proximoPrazo = '';
     $honorarios = 0;
     $parcelas = 0;
+    $escritorio = '';
 } else {
     $processo = unserialize($_SESSION['processo']);
     $honoraio = unserialize($_SESSION['honorario']);
@@ -18,7 +19,7 @@ if($_SESSION['processo'] == '') {
     $cliente = $processo->getCliente();
     $descricao = $processo->getDescricao();
     $escritorio = $processo->getEscritorio();
-    $proximoPrazo = '';
+    $proximoPrazo = $processo->getProximoPrazo();
     $honorarios = $honoraio->getHonorario();
     $parcelas = $honoraio->getParcelas();
 }

@@ -5,7 +5,7 @@
         private string $cliente;
         private bool $escritorio;
         private string $descricao;
-
+        private string $proximoPrazo;
 
         public function __construct(){
             $this->nmrProcesso = 0;
@@ -13,6 +13,7 @@
             $this->cliente = '';
             $this->escritorio = true;
             $this->descricao = '';
+            $this->proximoPrazo = '';
         }
 
         public function getNmrProcesso(): string{
@@ -67,7 +68,7 @@
             return $this->escritorio;
         }
 
-        public function setEscritorio($escritorio): void{
+        public function setEscritorio(bool $escritorio): void{
             $this->escritorio = $escritorio;
         }
 
@@ -91,19 +92,28 @@
                 $this->cliente = $row['cliente'];
                 $this->descricao = $row['descricao'];
                 $this->escritorio = $row['escritorio'];
+                $this->proximoPrazo = $row['proximoprazo'];
             }
         }
         
         public function criarProcesso(int $usuario){
             require ('../../database/Conexao.php');
-            $insert = "INSERT INTO processo(numeroprocesso, cliente, descricao,escritorio, idusuario) VALUES('$this->nmrProcesso','$this->cliente', '$this->descricao', true, $usuario)"; // Verificar entrada de valor para escritorio
+            if($this->escritorio){
+                $insert = "INSERT INTO processo(numeroprocesso, cliente, descricao, escritorio, proximoprazo, idusuario) VALUES('$this->nmrProcesso','$this->cliente', '$this->descricao', true, '$this->proximoPrazo', $usuario)";
+            }else{
+                $insert = "INSERT INTO processo(numeroprocesso, cliente, descricao, escritorio, proximoprazo, idusuario) VALUES('$this->nmrProcesso','$this->cliente', '$this->descricao', false, '$this->proximoPrazo', $usuario)";
+            }
             /** @var 'database/Conexao.php' $bd */
             mysqli_query($bd, $insert);
         }
 
         public function atualizarProcesso(): void{
             require ('../../database/Conexao.php');
-            $sql = "UPDATE processo SET cliente = '$this->cliente', descricao = '$this->descricao', escritorio = true WHERE numeroprocesso = '$this->nmrProcesso'";
+            if($this->escritorio){
+                $sql = "UPDATE processo SET cliente = '$this->cliente', descricao = '$this->descricao', escritorio = true, proximoprazo = '$this->proximoPrazo' WHERE numeroprocesso = '$this->nmrProcesso'";
+            }else{
+                $sql = "UPDATE processo SET cliente = '$this->cliente', descricao = '$this->descricao', escritorio = false, proximoprazo = '$this->proximoPrazo' WHERE numeroprocesso = '$this->nmrProcesso'";
+            }
             /** @var 'database/Conexao.php' $bd */
             mysqli_query($bd, $sql);
         }

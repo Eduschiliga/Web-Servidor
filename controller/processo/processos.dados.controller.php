@@ -17,11 +17,6 @@
             $_SESSION['honorario'] = serialize($honorario);
             $_SESSION['processo'] = serialize($processo);
         } else {
-            if($_GET['acao'] == 'deletar'){
-                $processo->removerProcesso($_GET['nmrProcesso']);
-                header('Location: ../../view/pages/processos/processos_page.php?deleted=true&nmrProcesso=' . $_GET['nmrProcesso']);
-                exit();
-            }
             if(isset($_POST["salvar"])) {
                 if($acao != 'incluir') {
                     require '../../utils/Validacao.php';
@@ -36,17 +31,36 @@
                 $processo->buscarProcesso($usuario->getId());
                 $cliente = $_POST["nome_cliente"] ?? '';
                 $descricao = $_POST["descricao"] ?? '';
-                $_POST["metade_escritorio"] == "Sim" ? $escritorio = true : $escritorio = false;
+                $proximoPrazo = $_POST["data_proximo_prazo"];
+                $_POST["metade_escritorio"] == "sim" ? $escritorio = true : $escritorio = false;
                 if($processo->getCliente() != '') {
                     $processo->setDescricao($descricao);
                     $processo->setCliente($cliente);
                     $processo->setEscritorio($escritorio);
+                    $processo->setProximoPrazo($proximoPrazo);
                     $processo->atualizarProcesso();
+                    $honorario->setHonorario($_POST['qtd_honorarios']);
+                    $honorario->setParcelas($_POST['nmr_parcelas']);
+                    $processo->buscarProcesso($usuario->getId());
+                    $honorario->atualizarHonorario($processo->getIdProcesso());
                 } else {
+                    $processo->setCliente($cliente);
+                    $processo->setDescricao($descricao);
+                    $processo->setEscritorio($escritorio);
+                    $processo->setProximoPrazo($proximoPrazo);
                     $processo->criarProcesso($usuario->getId());
+                    $honorario->setHonorario($_POST['qtd_honorarios']);
+                    $honorario->setParcelas($_POST['nmr_parcelas']);
+                    $processo->buscarProcesso($usuario->getId());
+                    $honorario->criarHonorario($processo->getIdProcesso());
                 }
                 $_SESSION['processo'] = serialize($processo);
                 header("Location: ../../view/pages/processos/processos_page.php?create=true&nmrProcesso=" . $processo->getNmrProcesso());
+                exit();
+            }
+            if($_GET['acao'] == 'deletar'){
+                $processo->removerProcesso($_GET['nmrProcesso']);
+                header('Location: ../../view/pages/processos/processos_page.php?deleted=true&nmrProcesso=' . $_GET['nmrProcesso']);
                 exit();
             }
         }

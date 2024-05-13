@@ -57,4 +57,18 @@
                 $this->parcelas = $row['parcelas'];
             }
         }
+
+        public function criarHonorario(int $idProcesso){
+            require ('../../database/Conexao.php');
+            $sql = "INSERT INTO honorario(honorario,parcelas,idprocesso) VALUES ('$this->honorario','$this->parcelas',$idProcesso)";
+            /** @var 'database/Conexao.php' $bd */
+            $result = mysqli_query($bd, $sql);
+        }
+
+        public function atualizarHonorario(int $idProcesso){
+            require ('../../database/Conexao.php');
+            $sql = "UPDATE honorario SET honorario = '$this->honorario', parcelas = '$this->parcelas' WHERE idprocesso = $idProcesso";
+            /** @var 'database/Conexao.php' $bd */
+            mysqli_query($bd, $sql);
+        }
     }
