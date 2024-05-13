@@ -12,20 +12,20 @@
 }
 
 .modal-background {
-    position: absolute; /* Pode ser absolute, pois o pai é fixed */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
-    z-index: -1; /* Mantém o background atrás do conteúdo do modal */
+    z-index: -1;
 }
 
 #deleteModal .modal-content, #confirmModal .modal-content, #createModal .modal-content {
-    position: absolute; /* Posição absoluta para se ajustar corretamente */
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Técnica para centralizar perfeitamente */
+    transform: translate(-50%, -50%);
     width: 30%;
     min-width: 300px;
     background: white;
@@ -33,10 +33,8 @@
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border: 1px solid #ebebeb;
-    z-index: 100000; /* Assegura que o conteúdo esteja acima do background */
+    z-index: 100000;
 }
-
-
 
 #deleteModal h2, #deleteModal p {
     margin-bottom: 20px;
