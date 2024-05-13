@@ -24,7 +24,6 @@
             }
             if(isset($_POST["salvar"])) {
                 if($acao != 'incluir') {
-//                    $erros = getErros();
                     require '../../utils/Validacao.php';
                     $erros = Validacao::getErros();
                     if (!empty($erros)) {

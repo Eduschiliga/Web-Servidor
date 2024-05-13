@@ -7,7 +7,7 @@ class Validacao {
      * @param string $numero_processo Número do processo a ser validado.
      * @return bool Verdadeiro se válido, falso se inválido.
      */
-    public static function validarNumeroProcesso($numero_processo): bool {
+    public static function validarNumeroProcesso(string $numero_processo): bool {
         return !empty($numero_processo) && preg_match('/^\d{16}$/', $numero_processo);
     }
 
@@ -16,7 +16,7 @@ class Validacao {
      * @param mixed $honorarios Valor dos honorários a ser validado.
      * @return bool Verdadeiro se válido, falso se inválido.
      */
-    public static function validarHonorarios($honorarios): bool {
+    public static function validarHonorarios(mixed $honorarios): bool {
         return $honorarios > 0 && is_numeric($honorarios);
     }
 
@@ -25,7 +25,7 @@ class Validacao {
      * @param int $nmr_parcelas Número de parcelas a ser validado.
      * @return bool Verdadeiro se válido, falso se inválido.
      */
-    public static function validarNmrParcelas($nmr_parcelas): bool {
+    public static function validarNmrParcelas(int $nmr_parcelas): bool {
         return $nmr_parcelas > 0;
     }
 
@@ -34,7 +34,7 @@ class Validacao {
      * @param string $nome_cliente Nome do cliente a ser validado.
      * @return bool Verdadeiro se válido, falso se inválido.
      */
-    public static function validarNomeCliente($nome_cliente): bool {
+    public static function validarNomeCliente(string $nome_cliente): bool {
         return preg_match('/^[a-zA-ZÀ-ÿ\s]+$/', $nome_cliente);
     }
 
@@ -43,7 +43,7 @@ class Validacao {
      * @param string $data_proximo_prazo Data a ser validada.
      * @return bool Verdadeiro se a data é futura, falso se não.
      */
-    public static function validarDataProximoPrazo($data_proximo_prazo): bool {
+    public static function validarDataProximoPrazo(string $data_proximo_prazo): bool {
         $dataAtual = date('Y-m-d');
         return $data_proximo_prazo >= $dataAtual;
     }
