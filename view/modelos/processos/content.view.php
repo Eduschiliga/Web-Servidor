@@ -5,6 +5,7 @@
     $processo = new Processo();
     $usuario = unserialize($_SESSION['usuario']);
     $processos = $processo->listarTodos($usuario->getId());
+
 ?>
 
 <main>
@@ -23,6 +24,17 @@
             <li><a href="../../../controller/processo/processos.dados.controller.php?acao=incluir" class="button-acao"><img src="../../../images/icons/incluir.png" alt="Icon Incluir">INCLUIR</a></li>
         </ul>
     </section>
+
+    <?php if (isset($_GET['deleted']) && $_GET['deleted']): ?>
+        <div id="confirmModal">
+            <div class="modal-content bg-confirm">
+                <h2>Processo Excluído</h2>
+                <p>O processo <span id="numero_processo"></span> foi excluído com sucesso!</p>
+                <button onclick="document.getElementById('confirmModal').style.display='none'" class="cancel-button" style="background-color: #2BD968">Ok</button>
+            </div>
+            <div class="modal-background"></div>
+        </div>
+    <?php endif; ?>
 
     <table>
         <thead>
@@ -55,20 +67,11 @@
     <div id="deleteModal">
         <div class="modal-content">
             <h2>Confirmação de Exclusão</h2>
-            <p>Tem certeza que deseja excluir este processo?</p>
+            <p>Tem certeza que deseja excluir este processo? <span id="numero_processo"></span></p>
             <button id="confirmDelete">Confirmar</button>
             <button onclick="document.getElementById('deleteModal').style.display='none'" class="cancel-button">Cancelar</button>
         </div>
         <div class="modal-background"></div>
     </div>
-
-    <script>
-        function showDeleteModal(nmrProcesso) {
-            document.getElementById('deleteModal').style.display = 'block';
-            document.getElementById('confirmDelete').onclick = function() {
-                window.location.href = '../../../controller/processo/processos.dados.controller.php?acao=deletar&nmrProcesso=' + nmrProcesso;
-            };
-        }
-    </script>
 </main>
 

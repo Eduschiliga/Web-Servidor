@@ -19,5 +19,7 @@
         <?php require_once('../../modelos/header.php') ?>
         <?php require_once('../../modelos/processos/content.view.php') ?>
         <?php require_once('../../modelos/footer.php') ?>
+        <script src="../../../js/modal.js"></script>
+
     </body>
 </html>

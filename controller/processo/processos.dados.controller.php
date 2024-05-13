@@ -55,8 +55,7 @@
         } else {
             if($_GET['acao'] == 'deletar'){
                 $processo->removerProcesso($_GET['nmrProcesso']);
-                echo 'teste';
-                header('Location: ../../view/pages/processos/processos_page.php');
+                header('Location: ../../view/pages/processos/processos_page.php?deleted=true&nmrProcesso=' . $_GET['nmrProcesso']);
                 exit();
             }
             if(isset($_POST["salvar"])) {
