@@ -60,6 +60,12 @@
                     $honorario->criarHonorario($processo->getIdProcesso());
                 }
                 $_SESSION['processo'] = serialize($processo);
+
+                if ($_GET['acao'] == 'editar') {
+                    header("Location: ../../processos/index.php?editar=true&nmrProcesso=" . $processo->getNmrProcesso());
+                    exit();
+                }
+
                 header("Location: ../../processos/index.php?create=true&nmrProcesso=" . $processo->getNmrProcesso());
                 exit();
             }
