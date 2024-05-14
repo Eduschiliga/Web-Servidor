@@ -3,7 +3,7 @@
     session_start();
 
     if(!empty($_SESSION['logado'])){
-        header('Location: ../../view/pages/usuarios/usuarios_page.php');
+        header('Location: ../../usuario/');
     }else{
         header('Location: ../../index.php');
     }

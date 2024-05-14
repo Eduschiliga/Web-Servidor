@@ -3,7 +3,7 @@
     session_start();
 
     if(!empty($_SESSION['logado'])) {
-        header('Location: ../../view/pages/processos/processos_page.php');
+        header('Location: ../../processos/');
     } else {
         header('Location: ../../index.php');
     }

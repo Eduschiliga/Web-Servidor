@@ -128,7 +128,7 @@
 
 
         public function listarTodos($usuario): array {
-            require ('../../../database/Conexao.php');
+            require ('../database/Conexao.php');
 
             $sql = "SELECT * FROM processo WHERE idusuario = '$usuario'";
             /** @var 'database/Conexao.php' $bd */
