@@ -18,6 +18,8 @@ Projeto realizado para disciplina de Desenvolvimento Web Servidor
 > Baixar o software XAMPP  
 > Clonar o repositório do projeto  
 > Ir na pasta de instalação do XAMPP, localizar a pasta HTDOCS e substituir o que contém dentro dela pela pasta do projeto  
+> Criar schemas baseados no schemas disponibilizados por meio da pasta database -> schemas.
+> Necessário inserir o usuário diretamente no bancio.  
 > Inicializar o servidor do Apache no XAMPP  
 > Ir até o seu navegador e digitar localhost na url  
 
