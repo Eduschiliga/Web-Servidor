@@ -1,11 +1,11 @@
 <?php
     class Processo {
-        private int $idprocesso;
-        private int $nmrProcesso;
-        private string $cliente;
-        private bool $escritorio;
-        private string $descricao;
-        private string $proximoPrazo;
+        private ?int $idprocesso;
+        private ?int $nmrProcesso;
+        private ?string $cliente;
+        private ?bool $escritorio;
+        private ?string $descricao;
+        private ?string $proximoPrazo;
 
         public function __construct(){
             $this->nmrProcesso = 0;
@@ -150,4 +150,48 @@
             }
             return $processos;
         }
+
+        public function getDadosAggregados(): array {
+            require ('../database/Conexao.php');
+
+
+            $sql = "SELECT COUNT(p.idprocesso) AS total_processos, SUM(h.honorario) AS total_honorarios 
+            FROM processo p 
+            JOIN honorario h ON p.idprocesso = h.idprocesso";
+            /** @var 'database/Conexao.php' $bd */
+            $result = mysqli_query($bd, $sql);
+
+            if ($result && $row = mysqli_fetch_assoc($result)) {
+                return [
+                    'total_processos' => $row['total_processos'],
+                    'total_honorarios' => number_format($row['total_honorarios'], 2, ',', '.')
+                ];
+            } else {
+                return [
+                    'total_processos' => 0,
+                    'total_honorarios' => '0,00'
+                ];
+            }
+        }
+
+        public function getProcessosDoDia(): array {
+            require '../database/Conexao.php';
+            $sql = "SELECT numeroprocesso, cliente, proximoprazo FROM processo WHERE DATE(proximoprazo) = CURDATE()";
+            /** @var 'database/Conexao.php' $bd */
+
+            $result = mysqli_query($bd, $sql);
+            $processos = [];
+
+            while ($row = mysqli_fetch_assoc($result)) {
+                $processos[] = [
+                    'numeroprocesso' => $row['numeroprocesso'],
+                    'cliente' => $row['cliente'],
+                    'proximoprazo' => $row['proximoprazo']
+                ];
+            }
+
+            return $processos;
+        }
+
+
     }
