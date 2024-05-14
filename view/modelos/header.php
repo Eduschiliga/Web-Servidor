@@ -13,7 +13,7 @@
         <nav class="container-menu">
             <ul class="lista-menu">
                 <li>
-                    <a href="/Web-Servidor/home/" class="menu-item">
+                    <a href="../controller/home/home.controller.php" class="menu-item">
                         <img src="../images/icons/home.png" alt="Icon Home"> Página Inicial
                     </a>
                 </li>

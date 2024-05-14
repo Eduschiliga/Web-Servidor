@@ -13,9 +13,14 @@
         if(!empty($_GET['nmrProcesso']) && ($_GET['acao'] == 'visualizar' || $_GET['acao'] == 'editar') || isset($_GET["pesquisar"])) {
             $processo->setNmrProcesso((int) $_GET['nmrProcesso']);
             $processo->buscarProcesso($usuario->getId());
-            $honorario->buscarHonorario($processo->getIdProcesso());
-            $_SESSION['honorario'] = serialize($honorario);
-            $_SESSION['processo'] = serialize($processo);
+            if($processo->getCliente() != '') {
+                $honorario->buscarHonorario($processo->getIdProcesso());
+                $_SESSION['honorario'] = serialize($honorario);
+                $_SESSION['processo'] = serialize($processo);
+            } else {
+                header("Location: ../../processos/");
+                exit();
+            }
         } else {
             if(isset($_POST["salvar"])) {
                 if($acao != 'incluir') {
