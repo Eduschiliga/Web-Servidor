@@ -11,9 +11,10 @@
             OAB
             <input type="text" class="input-dado" name="oab_user" id="oab_user" value="<?= htmlspecialchars($usuario->getOab(), ENT_QUOTES, 'UTF-8'); ?>" disabled>
         </label>
-        </br>
+        <br>
         <h1>Trocar senha</h1>
-        </br>
+        <br>
+        
         <label for="senha_antiga_user" class="rotulo">
             Senha Antiga
             <input type="password" class="input-dado" name="senha_antiga" id="senha_antiga" maxlength="45">
