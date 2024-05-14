@@ -14,15 +14,21 @@
         <br>
         <h1>Trocar senha</h1>
         <br>
-        
+
+        <?php if (isset($_SESSION['erro'])): ?>
+            <div style="background-color: rgba(255, 0, 0, 0.63); padding: 10px; border-radius: 5px;">
+                <p style="color: white; font-weight: bold;"><?= htmlspecialchars($_SESSION['erro'], ENT_QUOTES, 'UTF-8'); ?></p>
+            </div>
+            <?php unset($_SESSION['erro']); endif; ?>
+
         <label for="senha_antiga_user" class="rotulo">
             Senha Antiga
-            <input type="password" class="input-dado" name="senha_antiga" id="senha_antiga" maxlength="45">
+            <input type="password" class="input-dado" name="senha_antiga" id="senha_antiga" maxlength="45" >
         </label>
 
         <label for="senha_nova_user" class="rotulo">
             Senha Nova
-            <input type="password" class="input-dado" name="senha_nova" id="senha_nova" maxlength="45">
+            <input type="password" class="input-dado" name="senha_nova" id="senha_nova" maxlength="45" >
         </label>
 
         <input type="submit" value="Confirmar" class="button-enviar">
