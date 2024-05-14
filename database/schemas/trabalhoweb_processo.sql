@@ -1,10 +1,10 @@
-CREATE DATABASE  IF NOT EXISTS `trabalhoweb` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE  IF NOT EXISTS `trabalhoweb` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci */;
 USE `trabalhoweb`;
 -- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
 -- Host: localhost    Database: trabalhoweb
 -- ------------------------------------------------------
--- Server version	5.7.44-log
+-- Server version	5.5.5-10.4.32-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,15 +26,18 @@ DROP TABLE IF EXISTS `processo`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `processo` (
   `idprocesso` int(11) NOT NULL AUTO_INCREMENT,
-  `cliente` varchar(45) DEFAULT NULL,
+  `numeroprocesso` bigint(20) NOT NULL,
+  `cliente` varchar(45) NOT NULL,
   `descricao` varchar(255) DEFAULT NULL,
   `escritorio` tinyint(4) DEFAULT NULL,
+  `proximoprazo` varchar(45) DEFAULT NULL,
   `idusuario` int(11) NOT NULL,
   PRIMARY KEY (`idprocesso`),
   UNIQUE KEY `idprocesso_UNIQUE` (`idprocesso`),
+  UNIQUE KEY `numeroprocesso_UNIQUE` (`numeroprocesso`),
   KEY `fkusuario_idx` (`idusuario`),
-  CONSTRAINT `fkusuario` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`idusuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  CONSTRAINT `fkusuario` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`idusuario`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -46,4 +49,4 @@ CREATE TABLE `processo` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-08 21:14:35
+-- Dump completed on 2024-05-13 22:36:51
